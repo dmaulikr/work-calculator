@@ -17,7 +17,7 @@ class BaseVC: UIViewController, UITextFieldDelegate {
     
     var rawPrice = 0.0
     var totalPrice = 0.0
-    var taxPercent = 0.0
+    var taxPercent = 1.0
     var taxableAmount = 0.0
     
     override func viewDidLoad() {
@@ -49,16 +49,17 @@ class BaseVC: UIViewController, UITextFieldDelegate {
         
         if priceExcludingTax.text == nil || priceExcludingTax.text == "" {
             print("No Data in field!")
+            rawPrice = 0.0
         } else {
             
             if let value = Double(priceExcludingTax.text!) {
                 rawPrice = value
                 
                 taxableAmount = rawPrice * (taxPercent * 0.01)
-                taxAmount.text = "\(taxableAmount.round(to: 2))"
+                taxAmount.text = "\(taxableAmount.round(to: 2).formattedWithSeparator)"
                 totalPrice = rawPrice + taxableAmount
-                total.text = "\(totalPrice.round(to: 2))"
-                priceExcludingTax.text = value.formattedWithSeparator
+                total.text = "\(totalPrice.round(to: 2).formattedWithSeparator)"
+                priceExcludingTax.text = value.round(to: 2).formattedWithSeparator
             }
         }
     }
@@ -66,15 +67,16 @@ class BaseVC: UIViewController, UITextFieldDelegate {
     @IBAction func taxAmountEdited(_ sender: Any) {
         if taxAmount.text == nil || taxAmount.text == "" {
             print("No Data in field!")
+            taxableAmount = 0.0
         } else {
             
             if let value = Double(taxAmount.text!) {
                 taxableAmount = value
                 print("TP:", taxPercent)
                 rawPrice = taxableAmount * 100 / taxPercent
-                taxAmount.text = "\(taxableAmount.round(to: 2))"
+                taxAmount.text = "\(taxableAmount.round(to: 2).formattedWithSeparator)"
                 totalPrice = rawPrice + taxableAmount
-                total.text = "\(totalPrice.round(to: 2))"
+                total.text = "\(totalPrice.round(to: 2).formattedWithSeparator)"
                 priceExcludingTax.text = "\(rawPrice.round(to: 2).formattedWithSeparator)"
             }
         }
@@ -82,25 +84,38 @@ class BaseVC: UIViewController, UITextFieldDelegate {
     
     @IBAction func taxPercentageEdited(_ sender: Any) {
         
+        if taxPercentage.text == nil || taxPercentage.text == "" {
+            print("Default tax")
+            taxPercent = 1.0
+            
+            taxableAmount = rawPrice * (taxPercent * 0.01)
+            taxAmount.text = "\(taxableAmount.round(to: 2).formattedWithSeparator)"
+            totalPrice = rawPrice + taxableAmount
+            total.text = "\(totalPrice.round(to: 2).formattedWithSeparator)"
+            taxPercentage.text = "1.0%"
+            
+        } else {
         taxPercent = Double(taxPercentage.text!)!
-//        taxableAmount = rawPrice * (taxPercent * 0.01)
-//        taxAmount.text = "\(taxableAmount.round(to: 2))"
-//        totalPrice = rawPrice + taxableAmount
-//        total.text = "\(totalPrice.round(to: 2))"
+        taxableAmount = rawPrice * (taxPercent * 0.01)
+        taxAmount.text = "\(taxableAmount.round(to: 2).formattedWithSeparator)"
+        totalPrice = rawPrice + taxableAmount
+        total.text = "\(totalPrice.round(to: 2).formattedWithSeparator)"
         taxPercentage.text = "\(Double(taxPercentage.text!)!.round(to: 2))%"
+        }
     }
     
     @IBAction func totalEdited(_ sender: Any) {
         if total.text == nil || total.text == "" {
             print("No Data in field!")
+            totalPrice = 0.0
         } else {
             
             if let value = Double(total.text!) {
                 totalPrice = value
                 rawPrice = (totalPrice * 100) / (taxPercent + 100)
                 taxableAmount = rawPrice * (taxPercent * 0.01)
-                taxAmount.text = "\(taxableAmount.round(to: 2))"
-                total.text = "\(totalPrice.round(to: 2))"
+                taxAmount.text = "\(taxableAmount.round(to: 2).formattedWithSeparator)"
+                total.text = "\(totalPrice.round(to: 2).formattedWithSeparator)"
                 priceExcludingTax.text = "\(rawPrice.round(to: 2).formattedWithSeparator)"
             }
         }
@@ -128,8 +143,16 @@ class BaseVC: UIViewController, UITextFieldDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(BaseVC.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
     
-    
-    
+    func showAlertWithTitle(_ title:String, message:String) {
+        
+        let alertVC = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertVC.addAction(okAction)
+        
+        DispatchQueue.main.async { () -> Void in
+            self.present(alertVC, animated: true, completion: nil)
+        }
+    }
     
 }
 

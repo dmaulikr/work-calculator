@@ -20,7 +20,7 @@ class CustomTextField: UITextField {
     }
     
     override func textRect(forBounds bounds: CGRect) -> CGRect {
-        return bounds.insetBy(dx: inset, dy: inset)
+        return bounds.insetBy(dx: inset, dy: 10)
     }
     
     override func editingRect(forBounds bounds: CGRect) -> CGRect {
