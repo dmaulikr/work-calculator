@@ -30,6 +30,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u58-DS-uC2" customClass="CustomButton" customModule="GST_Calculator" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="533" width="320" height="35"/>
+                                <color key="backgroundColor" red="0.38823529410000002" green="0.36078431370000003" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="19"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="doneTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Y2l-PJ-Ono"/>
+                                </connections>
+                            </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="XRB-Mf-pMK">
                                 <rect key="frame" x="16" y="23" width="288" height="248.5"/>
                                 <subviews>
@@ -78,7 +89,8 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="priceExcludingTaxEdited:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="Ili-E2-r7C"/>
+                                                    <action selector="beginEditing:" destination="BYZ-38-t0r" eventType="editingDidBegin" id="UH4-R7-5w3"/>
+                                                    <action selector="priceExcludingTaxEdited:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="ajF-Gf-aEy"/>
                                                 </connections>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price Excluding GST" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PNZ-1P-J4C">
@@ -106,6 +118,7 @@
                                                         <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="28"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                         <connections>
+                                                            <action selector="beginEditing:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="5q9-Is-Awd"/>
                                                             <action selector="taxPercentageEdited:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="cSP-oD-c6M"/>
                                                         </connections>
                                                     </textField>
@@ -123,6 +136,7 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
+                                                            <action selector="beginEditing:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="gGP-nk-WT9"/>
                                                             <action selector="taxAmountEdited:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="KUA-V0-wIy"/>
                                                         </connections>
                                                     </textField>
@@ -167,6 +181,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
+                                                    <action selector="beginEditing:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="mZ3-6K-1yE"/>
                                                     <action selector="totalEdited:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="Olo-wf-VBE"/>
                                                 </connections>
                                             </textField>
@@ -180,7 +195,7 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <stackView clipsSubviews="YES" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="MOE-re-ff4">
+                            <stackView clipsSubviews="YES" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="MOE-re-ff4" userLabel="Keyboard">
                                 <rect key="frame" x="0.0" y="274" width="320" height="294"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="yb8-z2-6H6">
@@ -466,16 +481,22 @@
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="XRB-Mf-pMK" secondAttribute="trailing" id="9vJ-Ws-VN8"/>
                             <constraint firstItem="XRB-Mf-pMK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Drv-ua-CoW"/>
+                            <constraint firstAttribute="trailing" secondItem="u58-DS-uC2" secondAttribute="trailing" id="Id9-qc-ewF"/>
+                            <constraint firstItem="u58-DS-uC2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Mi4-Ff-u0B"/>
                             <constraint firstAttribute="trailing" secondItem="MOE-re-ff4" secondAttribute="trailing" id="OVb-Np-FGK"/>
                             <constraint firstItem="XRB-Mf-pMK" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="3" id="Utm-56-GpN"/>
                             <constraint firstItem="MOE-re-ff4" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="VXG-pM-E3S"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="u58-DS-uC2" secondAttribute="bottom" id="YGf-6N-0xW"/>
+                            <constraint firstItem="u58-DS-uC2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="cD1-dA-rBu"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="MOE-re-ff4" secondAttribute="bottom" id="hsG-5Q-Mke"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="clearButton" destination="xBj-C0-cMC" id="9ys-Iy-Eb7"/>
                         <outlet property="delButton" destination="7vq-Fd-Xm5" id="rSg-Sa-tg7"/>
+                        <outlet property="doneButton" destination="u58-DS-uC2" id="GOu-Vk-QTT"/>
                         <outlet property="dotButton" destination="PyB-Q6-Cba" id="2UM-ah-vzY"/>
+                        <outlet property="keyboard" destination="MOE-re-ff4" id="KMz-EI-lMo"/>
                         <outlet property="output" destination="9OQ-6a-onI" id="hd7-es-Ume"/>
                         <outlet property="priceExcludingTax" destination="FN1-IM-cK8" id="uGz-KL-p2e"/>
                         <outlet property="taxAmount" destination="UeU-AO-dAQ" id="u1P-OP-ILA"/>

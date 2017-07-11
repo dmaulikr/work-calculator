@@ -18,6 +18,8 @@ class BaseVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var delButton: UIButton!
     @IBOutlet weak var dotButton: UIButton!
     @IBOutlet weak var output: UILabel!
+    @IBOutlet weak var keyboard: UIStackView!
+    @IBOutlet weak var doneButton: CustomButton!
     
     // Basic variables
     var rawPrice = 0.0
@@ -35,18 +37,18 @@ class BaseVC: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.priceExcludingTax.delegate = self
+        priceExcludingTax.delegate = self
         taxAmount.delegate = self
         taxPercentage.delegate = self
         total.delegate = self
-//        priceExcludingTax.becomeFirstResponder()
         
-//        addObserverForKeyboard()
+        addObserverForKeyboard()
     }
     
     //Keyboard dismiss
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
+        doneButton.isHidden = true
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -56,6 +58,13 @@ class BaseVC: UIViewController, UITextFieldDelegate {
         total.resignFirstResponder()
         return true
     }
+    
+    @IBAction func doneTapped(_ sender: Any) {
+        
+        self.view.endEditing(true)
+        doneButton.isHidden = true
+    }
+    
     
     @IBAction func priceExcludingTaxEdited(_ sender: Any) {
         
@@ -78,12 +87,7 @@ class BaseVC: UIViewController, UITextFieldDelegate {
                 taxAmount.text = taxableAmount.round(to: 2).formattedWithSeparator
                 total.text = totalPrice.round(to: 2).formattedWithSeparator
                 priceExcludingTax.text = rawPrice.round(to: 2).formattedWithSeparator
-//                priceExcludingTax.text = "\(rawPrice)"
             }
-            
-            // Set running number
-//            runningNumber = priceExcludingTax.text!
-//            print("N:", runningNumber)
         }
     }
     
@@ -164,6 +168,17 @@ class BaseVC: UIViewController, UITextFieldDelegate {
         }
     }
     
+    @IBAction func beginEditing(_ sender: Any) {
+        
+        runningNumber = "0"
+        leftValStr = ""
+        rightValStr = ""
+        output.text = ""
+        result = ""
+        currentOperation = CalcService.Operation.empty
+    }
+    
+    
     //Keyboard frame sizing
     func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
@@ -171,6 +186,8 @@ class BaseVC: UIViewController, UITextFieldDelegate {
                 self.view.frame.origin.y -= keyboardSize.height
             }
         }
+        keyboard.isHidden = true
+        doneButton.isHidden = false
     }
     
     func keyboardWillHide(notification: NSNotification) {
@@ -179,6 +196,8 @@ class BaseVC: UIViewController, UITextFieldDelegate {
                 self.view.frame.origin.y += keyboardSize.height
             }
         }
+        keyboard.isHidden = false
+        doneButton.isHidden = true
     }
     
     func addObserverForKeyboard() {
@@ -232,10 +251,6 @@ class BaseVC: UIViewController, UITextFieldDelegate {
     
     @IBAction func onAddPressed(_ sender: AnyObject) {
         processOperation(CalcService.Operation.add)
-        print("add pressed")
-        print("RN:", runningNumber)
-        print("LVS", leftValStr)
-        print("RVS", rightValStr)
     }
     
     @IBAction func onEqualPressed(_ sender: AnyObject) {
@@ -245,24 +260,24 @@ class BaseVC: UIViewController, UITextFieldDelegate {
             result = "0"
             output.text = result
         }
-        
-        print("= pressed")
-        print("RN:", runningNumber)
-        print("LVS", leftValStr)
-        print("RVS", rightValStr)
-        print("Result:", result)
     }
     
     @IBAction func onClearPressed(_ sender: AnyObject) {
         
-//        priceExcludingTax.text = ""
         runningNumber = "0"
         leftValStr = ""
         rightValStr = ""
         output.text = ""
         result = ""
-        
         currentOperation = CalcService.Operation.empty
+        
+        priceExcludingTax.text = ""
+        taxAmount.text = ""
+        total.text = ""
+        
+        rawPrice = 0.0
+        taxableAmount = 0.0
+        totalPrice = 0.0
     }
     
     @IBAction func delTapped(_ sender: AnyObject) {
@@ -328,9 +343,9 @@ class BaseVC: UIViewController, UITextFieldDelegate {
                 
                 leftValStr = result
                 output.text = result
+                priceExcludingTax.text = result
+                priceExcludingTaxEdited((Any).self)
                 
-//                rawPrice = Double(result)!
-//                priceExcludingTax.text = "\(rawPrice)"
             }
             
             currentOperation = operation
