@@ -14,6 +14,7 @@
 		906CFBD61F14F25700C971B2 /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906CFBD51F14F25700C971B2 /* CustomLabel.swift */; };
 		906CFBD81F14F46F00C971B2 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906CFBD71F14F46F00C971B2 /* CustomView.swift */; };
 		906CFBDC1F154BDE00C971B2 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906CFBDB1F154BDE00C971B2 /* SettingsVC.swift */; };
+		906CFC2E1F15734700C971B2 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 906CFC2D1F15734700C971B2 /* StoreKit.framework */; };
 		906FFF291F120F190035EF3C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906FFF281F120F190035EF3C /* AppDelegate.swift */; };
 		906FFF2B1F120F190035EF3C /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906FFF2A1F120F190035EF3C /* BaseVC.swift */; };
 		906FFF2E1F120F190035EF3C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 906FFF2C1F120F190035EF3C /* Main.storyboard */; };
@@ -71,6 +72,7 @@
 		906CFBD51F14F25700C971B2 /* CustomLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
 		906CFBD71F14F46F00C971B2 /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		906CFBDB1F154BDE00C971B2 /* SettingsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
+		906CFC2D1F15734700C971B2 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		906FFF251F120F190035EF3C /* GST Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GST Calculator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		906FFF281F120F190035EF3C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		906FFF2A1F120F190035EF3C /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5AD89058B635F7E4F138F6FF /* Pods_GST_Calculator.framework in Frameworks */,
+				906CFC2E1F15734700C971B2 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,6 +255,7 @@
 		F1831D2BF412D75D4FCC03B7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				906CFC2D1F15734700C971B2 /* StoreKit.framework */,
 				E17E6D7DC521E0E4A1944E80 /* Pods_GST_Calculator.framework */,
 				3BD27A6DFCAE79E092DB8090 /* Pods_GST_CalculatorTests.framework */,
 				5048661E1122FD92B1D7328A /* Pods_GST_CalculatorUITests.framework */,
@@ -340,6 +344,11 @@
 						DevelopmentTeam = PTRW36GG78;
 						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
+						};
 					};
 					906FFF381F120F190035EF3C = {
 						CreatedOnToolsVersion = 8.3.3;
@@ -646,6 +655,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -696,6 +706,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
