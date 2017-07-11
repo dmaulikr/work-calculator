@@ -1,0 +1,6 @@
+framework module Pods_GST_CalculatorUITests {
+  umbrella header "Pods-GST CalculatorUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

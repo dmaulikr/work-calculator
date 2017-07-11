@@ -1,0 +1,12 @@
+PODS:
+  - SwiftlyRater (1.0.1)
+
+DEPENDENCIES:
+  - SwiftlyRater (~> 1.0)
+
+SPEC CHECKSUMS:
+  SwiftlyRater: 4cf422a7dc82c7000f385921c5f07c7fffd76bed
+
+PODFILE CHECKSUM: b4e6116ee1bcf42b801ea841c81d79aa039fbffc
+
+COCOAPODS: 1.2.0

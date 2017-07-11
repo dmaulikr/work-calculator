@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5AD89058B635F7E4F138F6FF /* Pods_GST_Calculator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E17E6D7DC521E0E4A1944E80 /* Pods_GST_Calculator.framework */; };
+		679FDA690AE9084554073434 /* Pods_GST_CalculatorUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5048661E1122FD92B1D7328A /* Pods_GST_CalculatorUITests.framework */; };
 		906CFBD21F14E1D400C971B2 /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 906CFBD11F14E1D400C971B2 /* Lato-Light.ttf */; };
 		906CFBD41F14E7A200C971B2 /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 906CFBD31F14E7A200C971B2 /* Lato-Regular.ttf */; };
 		906CFBD61F14F25700C971B2 /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906CFBD51F14F25700C971B2 /* CustomLabel.swift */; };
@@ -25,6 +27,7 @@
 		906FFF661F12261E0035EF3C /* ThousandSeparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906FFF651F12261E0035EF3C /* ThousandSeparator.swift */; };
 		906FFF681F1228160035EF3C /* PercentageTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906FFF671F1228160035EF3C /* PercentageTextField.swift */; };
 		90C041151F137FC200CA9DA0 /* CalcService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C041131F137FC200CA9DA0 /* CalcService.swift */; };
+		C62EBAE23B49250299F88E8A /* Pods_GST_CalculatorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BD27A6DFCAE79E092DB8090 /* Pods_GST_CalculatorTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +61,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3661EE194C4A88D4DF93D840 /* Pods-GST Calculator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GST Calculator.release.xcconfig"; path = "Pods/Target Support Files/Pods-GST Calculator/Pods-GST Calculator.release.xcconfig"; sourceTree = "<group>"; };
+		3BD27A6DFCAE79E092DB8090 /* Pods_GST_CalculatorTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GST_CalculatorTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5048661E1122FD92B1D7328A /* Pods_GST_CalculatorUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GST_CalculatorUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		55FEA9208BBE6DAD3EC35F48 /* Pods-GST CalculatorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GST CalculatorTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GST CalculatorTests/Pods-GST CalculatorTests.debug.xcconfig"; sourceTree = "<group>"; };
+		69BE782044105614F6D8445E /* Pods-GST CalculatorUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GST CalculatorUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GST CalculatorUITests/Pods-GST CalculatorUITests.release.xcconfig"; sourceTree = "<group>"; };
 		906CFBD11F14E1D400C971B2 /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Light.ttf"; sourceTree = "<group>"; };
 		906CFBD31F14E7A200C971B2 /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
 		906CFBD51F14F25700C971B2 /* CustomLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
@@ -82,6 +90,10 @@
 		906FFF651F12261E0035EF3C /* ThousandSeparator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThousandSeparator.swift; sourceTree = "<group>"; };
 		906FFF671F1228160035EF3C /* PercentageTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PercentageTextField.swift; sourceTree = "<group>"; };
 		90C041131F137FC200CA9DA0 /* CalcService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalcService.swift; sourceTree = "<group>"; };
+		AF05AD5E82408A18E0A4B3AB /* Pods-GST CalculatorUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GST CalculatorUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GST CalculatorUITests/Pods-GST CalculatorUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		BBBFA21D7B6D14E03140F3BD /* Pods-GST CalculatorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GST CalculatorTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GST CalculatorTests/Pods-GST CalculatorTests.release.xcconfig"; sourceTree = "<group>"; };
+		E17E6D7DC521E0E4A1944E80 /* Pods_GST_Calculator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GST_Calculator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8B9B00B4DD913E96598B48B /* Pods-GST Calculator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GST Calculator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GST Calculator/Pods-GST Calculator.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5AD89058B635F7E4F138F6FF /* Pods_GST_Calculator.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,6 +109,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C62EBAE23B49250299F88E8A /* Pods_GST_CalculatorTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,6 +117,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				679FDA690AE9084554073434 /* Pods_GST_CalculatorUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,6 +140,8 @@
 				906FFF3C1F120F190035EF3C /* GST CalculatorTests */,
 				906FFF471F120F1A0035EF3C /* GST CalculatorUITests */,
 				906FFF261F120F190035EF3C /* Products */,
+				C58A6BCB32356D8D2B71E671 /* Pods */,
+				F1831D2BF412D75D4FCC03B7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -219,6 +236,29 @@
 			name = Extensions;
 			sourceTree = "<group>";
 		};
+		C58A6BCB32356D8D2B71E671 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F8B9B00B4DD913E96598B48B /* Pods-GST Calculator.debug.xcconfig */,
+				3661EE194C4A88D4DF93D840 /* Pods-GST Calculator.release.xcconfig */,
+				55FEA9208BBE6DAD3EC35F48 /* Pods-GST CalculatorTests.debug.xcconfig */,
+				BBBFA21D7B6D14E03140F3BD /* Pods-GST CalculatorTests.release.xcconfig */,
+				AF05AD5E82408A18E0A4B3AB /* Pods-GST CalculatorUITests.debug.xcconfig */,
+				69BE782044105614F6D8445E /* Pods-GST CalculatorUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F1831D2BF412D75D4FCC03B7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E17E6D7DC521E0E4A1944E80 /* Pods_GST_Calculator.framework */,
+				3BD27A6DFCAE79E092DB8090 /* Pods_GST_CalculatorTests.framework */,
+				5048661E1122FD92B1D7328A /* Pods_GST_CalculatorUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -226,10 +266,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 906FFF4D1F120F1A0035EF3C /* Build configuration list for PBXNativeTarget "GST Calculator" */;
 			buildPhases = (
+				0810EAA4FE5C80F1488596FA /* [CP] Check Pods Manifest.lock */,
 				906FFF211F120F190035EF3C /* Sources */,
 				906FFF221F120F190035EF3C /* Frameworks */,
 				906FFF231F120F190035EF3C /* Resources */,
 				906CFBEE1F15583100C971B2 /* Embed Frameworks */,
+				F04CB06FC3324A1461E7FDC0 /* [CP] Embed Pods Frameworks */,
+				29EF7B85B92E622DE883047A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -244,9 +287,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 906FFF501F120F1A0035EF3C /* Build configuration list for PBXNativeTarget "GST CalculatorTests" */;
 			buildPhases = (
+				D4C96471E5766F989103D45B /* [CP] Check Pods Manifest.lock */,
 				906FFF351F120F190035EF3C /* Sources */,
 				906FFF361F120F190035EF3C /* Frameworks */,
 				906FFF371F120F190035EF3C /* Resources */,
+				3EDC22634EFFF4AC1941D890 /* [CP] Embed Pods Frameworks */,
+				A51DE0C763FFBBB0463C92B5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -262,9 +308,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 906FFF531F120F1A0035EF3C /* Build configuration list for PBXNativeTarget "GST CalculatorUITests" */;
 			buildPhases = (
+				E0DA7DAD09970E22D7B29506 /* [CP] Check Pods Manifest.lock */,
 				906FFF401F120F1A0035EF3C /* Sources */,
 				906FFF411F120F1A0035EF3C /* Frameworks */,
 				906FFF421F120F1A0035EF3C /* Resources */,
+				DCE271E41A8C5E9911ABB829 /* [CP] Embed Pods Frameworks */,
+				85B07A1F800A024DE09C469F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -289,6 +338,7 @@
 					906FFF241F120F190035EF3C = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = PTRW36GG78;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 					906FFF381F120F190035EF3C = {
@@ -312,6 +362,36 @@
 			knownRegions = (
 				en,
 				Base,
+				ar,
+				ca,
+				cs,
+				da,
+				de,
+				el,
+				es,
+				fi,
+				fr,
+				he,
+				hu,
+				id,
+				it,
+				ja,
+				ko,
+				ms,
+				nl,
+				pl,
+				"pt-BR",
+				"pt-PT",
+				ro,
+				ru,
+				sk,
+				sv,
+				th,
+				tr,
+				uk,
+				vi,
+				"zh-Hans",
+				"zh-Hant",
 			);
 			mainGroup = 906FFF1C1F120F190035EF3C;
 			productRefGroup = 906FFF261F120F190035EF3C /* Products */;
@@ -353,6 +433,144 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0810EAA4FE5C80F1488596FA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		29EF7B85B92E622DE883047A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GST Calculator/Pods-GST Calculator-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3EDC22634EFFF4AC1941D890 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GST CalculatorTests/Pods-GST CalculatorTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		85B07A1F800A024DE09C469F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GST CalculatorUITests/Pods-GST CalculatorUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A51DE0C763FFBBB0463C92B5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GST CalculatorTests/Pods-GST CalculatorTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D4C96471E5766F989103D45B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		DCE271E41A8C5E9911ABB829 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GST CalculatorUITests/Pods-GST CalculatorUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E0DA7DAD09970E22D7B29506 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F04CB06FC3324A1461E7FDC0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GST Calculator/Pods-GST Calculator-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		906FFF211F120F190035EF3C /* Sources */ = {
@@ -519,32 +737,40 @@
 		};
 		906FFF4E1F120F1A0035EF3C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F8B9B00B4DD913E96598B48B /* Pods-GST Calculator.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = PTRW36GG78;
 				INFOPLIST_FILE = "GST Calculator/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.andriiHalabuda.GST-Calculator";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		906FFF4F1F120F1A0035EF3C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3661EE194C4A88D4DF93D840 /* Pods-GST Calculator.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = PTRW36GG78;
 				INFOPLIST_FILE = "GST Calculator/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.andriiHalabuda.GST-Calculator";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
 		906FFF511F120F1A0035EF3C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 55FEA9208BBE6DAD3EC35F48 /* Pods-GST CalculatorTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -560,6 +786,7 @@
 		};
 		906FFF521F120F1A0035EF3C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BBBFA21D7B6D14E03140F3BD /* Pods-GST CalculatorTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -575,6 +802,7 @@
 		};
 		906FFF541F120F1A0035EF3C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AF05AD5E82408A18E0A4B3AB /* Pods-GST CalculatorUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = PTRW36GG78;
@@ -589,6 +817,7 @@
 		};
 		906FFF551F120F1A0035EF3C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 69BE782044105614F6D8445E /* Pods-GST CalculatorUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = PTRW36GG78;
