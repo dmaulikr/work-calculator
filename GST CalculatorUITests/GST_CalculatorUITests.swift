@@ -29,8 +29,56 @@ class GST_CalculatorUITests: XCTestCase {
     }
     
     func testExample() {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        XCUIDevice.shared().orientation = .portrait
+        
+        let app = XCUIApplication()
+        let button = app.buttons["1"]
+        button.tap()
+        
+        let button2 = app.buttons["5"]
+        button2.tap()
+        app.buttons["+"].tap()
+        app.buttons["8"].tap()
+        button2.tap()
+        
+        let button3 = app.buttons["="]
+        button3.tap()
+        app.buttons["÷"].tap()
+        button2.tap()
+        button3.tap()
+        app.buttons["×"].tap()
+        
+        let button4 = app.buttons["2"]
+        button4.tap()
+        button3.tap()
+        app.buttons["−"].tap()
+        button4.tap()
+        app.buttons["0"].tap()
+        button3.tap()
+        app.buttons["AC"].tap()
+        button.tap()
+        button4.tap()
+        app.buttons["3"].tap()
+        
+        let button5 = app.buttons["←"]
+        button5.tap()
+        button5.tap()
+        
+        app.buttons["+"].tap()
+        app.buttons["5"].tap()
+        button3.tap()
+        
+        let menuElementsQuery = app.otherElements.containing(.button, identifier:"menu")
+        let element = menuElementsQuery.children(matching: .other).element(boundBy: 0)
+        element.children(matching: .other).element(boundBy: 1).textFields["0.00"].tap()
+        app.textFields["6"].typeText("50")
+        
+        let doneButton = app.buttons["Done"]
+        doneButton.tap()
+        app.buttons["menu"].tap()
+        app.buttons["Turn off Ad for $0.99"].tap()
+        app.buttons["Restore Purchses"].tap()
+        button5.tap()
     }
     
 }

@@ -529,10 +529,10 @@
             </objects>
             <point key="canvasLocation" x="32.799999999999997" y="37.331334332833585"/>
         </scene>
-        <!--View Controller-->
+        <!--SettingsVC-->
         <scene sceneID="HAG-gf-TDH">
             <objects>
-                <viewController id="7Ss-pQ-xPZ" sceneMemberID="viewController">
+                <viewController id="7Ss-pQ-xPZ" customClass="SettingsVC" customModule="GST_Calculator" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nOA-t3-vRD"/>
                         <viewControllerLayoutGuide type="bottom" id="owK-Ed-DaA"/>

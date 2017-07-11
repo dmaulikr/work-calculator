@@ -9,9 +9,19 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>appRater.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>906CFBE11F15583100C971B2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>906FFF241F120F190035EF3C</key>
 		<dict>
 			<key>primary</key>

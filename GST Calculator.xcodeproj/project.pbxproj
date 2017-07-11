@@ -11,6 +11,7 @@
 		906CFBD41F14E7A200C971B2 /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 906CFBD31F14E7A200C971B2 /* Lato-Regular.ttf */; };
 		906CFBD61F14F25700C971B2 /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906CFBD51F14F25700C971B2 /* CustomLabel.swift */; };
 		906CFBD81F14F46F00C971B2 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906CFBD71F14F46F00C971B2 /* CustomView.swift */; };
+		906CFBDC1F154BDE00C971B2 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906CFBDB1F154BDE00C971B2 /* SettingsVC.swift */; };
 		906FFF291F120F190035EF3C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906FFF281F120F190035EF3C /* AppDelegate.swift */; };
 		906FFF2B1F120F190035EF3C /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906FFF2A1F120F190035EF3C /* BaseVC.swift */; };
 		906FFF2E1F120F190035EF3C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 906FFF2C1F120F190035EF3C /* Main.storyboard */; };
@@ -24,7 +25,6 @@
 		906FFF661F12261E0035EF3C /* ThousandSeparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906FFF651F12261E0035EF3C /* ThousandSeparator.swift */; };
 		906FFF681F1228160035EF3C /* PercentageTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906FFF671F1228160035EF3C /* PercentageTextField.swift */; };
 		90C041151F137FC200CA9DA0 /* CalcService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C041131F137FC200CA9DA0 /* CalcService.swift */; };
-		90C041161F137FC200CA9DA0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C041141F137FC200CA9DA0 /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,11 +44,25 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		906CFBEE1F15583100C971B2 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		906CFBD11F14E1D400C971B2 /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Light.ttf"; sourceTree = "<group>"; };
 		906CFBD31F14E7A200C971B2 /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
 		906CFBD51F14F25700C971B2 /* CustomLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
 		906CFBD71F14F46F00C971B2 /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
+		906CFBDB1F154BDE00C971B2 /* SettingsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		906FFF251F120F190035EF3C /* GST Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GST Calculator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		906FFF281F120F190035EF3C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		906FFF2A1F120F190035EF3C /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
@@ -68,7 +82,6 @@
 		906FFF651F12261E0035EF3C /* ThousandSeparator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThousandSeparator.swift; sourceTree = "<group>"; };
 		906FFF671F1228160035EF3C /* PercentageTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PercentageTextField.swift; sourceTree = "<group>"; };
 		90C041131F137FC200CA9DA0 /* CalcService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalcService.swift; sourceTree = "<group>"; };
-		90C041141F137FC200CA9DA0 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,7 +183,6 @@
 			isa = PBXGroup;
 			children = (
 				90C041131F137FC200CA9DA0 /* CalcService.swift */,
-				90C041141F137FC200CA9DA0 /* ViewController.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -179,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				906FFF2A1F120F190035EF3C /* BaseVC.swift */,
+				906CFBDB1F154BDE00C971B2 /* SettingsVC.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -216,6 +229,7 @@
 				906FFF211F120F190035EF3C /* Sources */,
 				906FFF221F120F190035EF3C /* Frameworks */,
 				906FFF231F120F190035EF3C /* Resources */,
+				906CFBEE1F15583100C971B2 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -345,11 +359,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				90C041161F137FC200CA9DA0 /* ViewController.swift in Sources */,
 				906FFF2B1F120F190035EF3C /* BaseVC.swift in Sources */,
 				906CFBD61F14F25700C971B2 /* CustomLabel.swift in Sources */,
 				906FFF291F120F190035EF3C /* AppDelegate.swift in Sources */,
 				906FFF601F1219D50035EF3C /* CustomButton.swift in Sources */,
+				906CFBDC1F154BDE00C971B2 /* SettingsVC.swift in Sources */,
 				906FFF681F1228160035EF3C /* PercentageTextField.swift in Sources */,
 				906FFF621F1219D50035EF3C /* CustomTextField.swift in Sources */,
 				906FFF661F12261E0035EF3C /* ThousandSeparator.swift in Sources */,
