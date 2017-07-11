@@ -15,6 +15,7 @@ class BaseVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var taxPercentage: UITextField!
     @IBOutlet weak var total: UITextField!
     @IBOutlet weak var clearButton: UIButton!
+    @IBOutlet weak var output: UILabel!
     
     // Basic variables
     var rawPrice = 0.0
@@ -36,9 +37,9 @@ class BaseVC: UIViewController, UITextFieldDelegate {
         taxAmount.delegate = self
         taxPercentage.delegate = self
         total.delegate = self
-        priceExcludingTax.becomeFirstResponder()
+//        priceExcludingTax.becomeFirstResponder()
         
-        addObserverForKeyboard()
+//        addObserverForKeyboard()
     }
     
     //Keyboard dismiss
@@ -198,6 +199,12 @@ class BaseVC: UIViewController, UITextFieldDelegate {
     //***Calculator functionality***
     //******************************
     
+    @IBAction func numberPressed(_ btn: UIButton!) {
+        
+        runningNumber += "\(btn.tag)"
+        output.text = runningNumber
+    }
+    
     @IBAction func onDividePressed(_ sender: AnyObject) {
         processOperation(CalcService.Operation.divide)
     }
@@ -232,10 +239,10 @@ class BaseVC: UIViewController, UITextFieldDelegate {
     @IBAction func onClearPressed(_ sender: AnyObject) {
         
 //        priceExcludingTax.text = ""
-        
         runningNumber = "0"
         leftValStr = "0"
         rightValStr = "0"
+        output.text = "0"
         result = "0"
         
         currentOperation = CalcService.Operation.empty
@@ -266,6 +273,8 @@ class BaseVC: UIViewController, UITextFieldDelegate {
                 }
                 
                 leftValStr = result
+                output.text = result
+                
 //                rawPrice = Double(result)!
 //                priceExcludingTax.text = "\(rawPrice)"
             }

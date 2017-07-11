@@ -23,7 +23,6 @@ class CalculationMath: UIViewController {
 
     // Actions
     @IBAction func numberPressed(_ btn: UIButton!) {
-        clearButton.isHidden = false
         
         runningNumber += "\(btn.tag)"
         outputLbl.text = runningNumber

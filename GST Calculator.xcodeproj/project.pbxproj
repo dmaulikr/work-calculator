@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		906CFBD21F14E1D400C971B2 /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 906CFBD11F14E1D400C971B2 /* Lato-Light.ttf */; };
+		906CFBD41F14E7A200C971B2 /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 906CFBD31F14E7A200C971B2 /* Lato-Regular.ttf */; };
+		906CFBD61F14F25700C971B2 /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906CFBD51F14F25700C971B2 /* CustomLabel.swift */; };
+		906CFBD81F14F46F00C971B2 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906CFBD71F14F46F00C971B2 /* CustomView.swift */; };
 		906FFF291F120F190035EF3C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906FFF281F120F190035EF3C /* AppDelegate.swift */; };
 		906FFF2B1F120F190035EF3C /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906FFF2A1F120F190035EF3C /* BaseVC.swift */; };
 		906FFF2E1F120F190035EF3C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 906FFF2C1F120F190035EF3C /* Main.storyboard */; };
@@ -42,6 +46,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		906CFBD11F14E1D400C971B2 /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Light.ttf"; sourceTree = "<group>"; };
+		906CFBD31F14E7A200C971B2 /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
+		906CFBD51F14F25700C971B2 /* CustomLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
+		906CFBD71F14F46F00C971B2 /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		906FFF251F120F190035EF3C /* GST Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GST Calculator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		906FFF281F120F190035EF3C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		906FFF2A1F120F190035EF3C /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
@@ -90,6 +98,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		906CFBD01F14E1BD00C971B2 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				906CFBD11F14E1D400C971B2 /* Lato-Light.ttf */,
+				906CFBD31F14E7A200C971B2 /* Lato-Regular.ttf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
 		906FFF1C1F120F190035EF3C = {
 			isa = PBXGroup;
 			children = (
@@ -118,6 +135,7 @@
 				906FFF581F1218550035EF3C /* Controllers */,
 				906FFF571F12184F0035EF3C /* Model */,
 				906FFF5A1F1219A50035EF3C /* Extensions */,
+				906CFBD01F14E1BD00C971B2 /* Fonts */,
 				906FFF591F12185F0035EF3C /* Support Files */,
 			);
 			path = "GST Calculator";
@@ -185,6 +203,8 @@
 				906FFF5D1F1219D50035EF3C /* CustomTextField.swift */,
 				906FFF671F1228160035EF3C /* PercentageTextField.swift */,
 				906FFF651F12261E0035EF3C /* ThousandSeparator.swift */,
+				906CFBD51F14F25700C971B2 /* CustomLabel.swift */,
+				906CFBD71F14F46F00C971B2 /* CustomView.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -301,7 +321,9 @@
 			files = (
 				906FFF331F120F190035EF3C /* LaunchScreen.storyboard in Resources */,
 				906FFF301F120F190035EF3C /* Assets.xcassets in Resources */,
+				906CFBD41F14E7A200C971B2 /* Lato-Regular.ttf in Resources */,
 				906FFF2E1F120F190035EF3C /* Main.storyboard in Resources */,
+				906CFBD21F14E1D400C971B2 /* Lato-Light.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,12 +350,14 @@
 			files = (
 				90C041161F137FC200CA9DA0 /* ViewController.swift in Sources */,
 				906FFF2B1F120F190035EF3C /* BaseVC.swift in Sources */,
+				906CFBD61F14F25700C971B2 /* CustomLabel.swift in Sources */,
 				906FFF291F120F190035EF3C /* AppDelegate.swift in Sources */,
 				906FFF601F1219D50035EF3C /* CustomButton.swift in Sources */,
 				906FFF681F1228160035EF3C /* PercentageTextField.swift in Sources */,
 				906FFF631F1219D50035EF3C /* DropMenuButton.swift in Sources */,
 				906FFF621F1219D50035EF3C /* CustomTextField.swift in Sources */,
 				906FFF661F12261E0035EF3C /* ThousandSeparator.swift in Sources */,
+				906CFBD81F14F46F00C971B2 /* CustomView.swift in Sources */,
 				90C041151F137FC200CA9DA0 /* CalcService.swift in Sources */,
 				906FFF641F1219D50035EF3C /* Material Design.swift in Sources */,
 			);
