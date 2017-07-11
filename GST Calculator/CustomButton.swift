@@ -31,6 +31,7 @@ class CustomButton: UIButton {
     
     override func awakeFromNib() {
         setupView()
+        setBackgroundImage(UIImage(named: "buttonBg"), for: .highlighted)
     }
     
     override func prepareForInterfaceBuilder() {

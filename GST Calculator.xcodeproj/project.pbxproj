@@ -20,7 +20,6 @@
 		906FFF491F120F1A0035EF3C /* GST_CalculatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906FFF481F120F1A0035EF3C /* GST_CalculatorUITests.swift */; };
 		906FFF601F1219D50035EF3C /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906FFF5B1F1219D50035EF3C /* CustomButton.swift */; };
 		906FFF621F1219D50035EF3C /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906FFF5D1F1219D50035EF3C /* CustomTextField.swift */; };
-		906FFF631F1219D50035EF3C /* DropMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906FFF5E1F1219D50035EF3C /* DropMenuButton.swift */; };
 		906FFF641F1219D50035EF3C /* Material Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906FFF5F1F1219D50035EF3C /* Material Design.swift */; };
 		906FFF661F12261E0035EF3C /* ThousandSeparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906FFF651F12261E0035EF3C /* ThousandSeparator.swift */; };
 		906FFF681F1228160035EF3C /* PercentageTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906FFF671F1228160035EF3C /* PercentageTextField.swift */; };
@@ -65,7 +64,6 @@
 		906FFF4A1F120F1A0035EF3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		906FFF5B1F1219D50035EF3C /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		906FFF5D1F1219D50035EF3C /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
-		906FFF5E1F1219D50035EF3C /* DropMenuButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropMenuButton.swift; sourceTree = "<group>"; };
 		906FFF5F1F1219D50035EF3C /* Material Design.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Material Design.swift"; sourceTree = "<group>"; };
 		906FFF651F12261E0035EF3C /* ThousandSeparator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThousandSeparator.swift; sourceTree = "<group>"; };
 		906FFF671F1228160035EF3C /* PercentageTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PercentageTextField.swift; sourceTree = "<group>"; };
@@ -198,7 +196,6 @@
 			isa = PBXGroup;
 			children = (
 				906FFF5F1F1219D50035EF3C /* Material Design.swift */,
-				906FFF5E1F1219D50035EF3C /* DropMenuButton.swift */,
 				906FFF5B1F1219D50035EF3C /* CustomButton.swift */,
 				906FFF5D1F1219D50035EF3C /* CustomTextField.swift */,
 				906FFF671F1228160035EF3C /* PercentageTextField.swift */,
@@ -354,7 +351,6 @@
 				906FFF291F120F190035EF3C /* AppDelegate.swift in Sources */,
 				906FFF601F1219D50035EF3C /* CustomButton.swift in Sources */,
 				906FFF681F1228160035EF3C /* PercentageTextField.swift in Sources */,
-				906FFF631F1219D50035EF3C /* DropMenuButton.swift in Sources */,
 				906FFF621F1219D50035EF3C /* CustomTextField.swift in Sources */,
 				906FFF661F12261E0035EF3C /* ThousandSeparator.swift in Sources */,
 				906CFBD81F14F46F00C971B2 /* CustomView.swift in Sources */,
