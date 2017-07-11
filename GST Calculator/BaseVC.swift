@@ -14,16 +14,25 @@ class BaseVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var taxAmount: UITextField!
     @IBOutlet weak var taxPercentage: UITextField!
     @IBOutlet weak var total: UITextField!
+    @IBOutlet weak var clearButton: UIButton!
     
+    // Basic variables
     var rawPrice = 0.0
     var totalPrice = 0.0
     var taxPercent = 1.0
     var taxableAmount = 0.0
     
+    // Variables for calculations
+    var runningNumber = ""
+    var leftValStr = ""
+    var rightValStr = ""
+    var result = ""
+    var currentOperation = CalcService.Operation.empty
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        priceExcludingTax.delegate = self
+        self.priceExcludingTax.delegate = self
         taxAmount.delegate = self
         taxPercentage.delegate = self
         total.delegate = self
@@ -66,7 +75,12 @@ class BaseVC: UIViewController, UITextFieldDelegate {
                 taxAmount.text = taxableAmount.round(to: 2).formattedWithSeparator
                 total.text = totalPrice.round(to: 2).formattedWithSeparator
                 priceExcludingTax.text = rawPrice.round(to: 2).formattedWithSeparator
+//                priceExcludingTax.text = "\(rawPrice)"
             }
+            
+            // Set running number
+//            runningNumber = priceExcludingTax.text!
+//            print("N:", runningNumber)
         }
     }
     
@@ -177,6 +191,94 @@ class BaseVC: UIViewController, UITextFieldDelegate {
         
         DispatchQueue.main.async { () -> Void in
             self.present(alertVC, animated: true, completion: nil)
+        }
+    }
+    
+    //******************************
+    //***Calculator functionality***
+    //******************************
+    
+    @IBAction func onDividePressed(_ sender: AnyObject) {
+        processOperation(CalcService.Operation.divide)
+    }
+    
+    @IBAction func onMultiplyPressed(_ sender: AnyObject) {
+        processOperation(CalcService.Operation.multiply)
+    }
+    
+    @IBAction func onSubtractPressed(_ sender: AnyObject) {
+        processOperation(CalcService.Operation.subtract)
+    }
+    
+    @IBAction func onAddPressed(_ sender: AnyObject) {
+        processOperation(CalcService.Operation.add)
+        print("add pressed")
+        print("RN:", runningNumber)
+        print("LVS", leftValStr)
+        print("RVS", rightValStr)
+//        priceExcludingTax.text = ""
+    }
+    
+    @IBAction func onEqualPressed(_ sender: AnyObject) {
+        processOperation(currentOperation)
+        
+        print("= pressed")
+        print("RN:", runningNumber)
+        print("LVS", leftValStr)
+        print("RVS", rightValStr)
+        print("Result:", result)
+    }
+    
+    @IBAction func onClearPressed(_ sender: AnyObject) {
+        
+//        priceExcludingTax.text = ""
+        
+        runningNumber = "0"
+        leftValStr = "0"
+        rightValStr = "0"
+        result = "0"
+        
+        currentOperation = CalcService.Operation.empty
+    }
+    
+    func processOperation(_ operation: CalcService.Operation) {
+        
+        if currentOperation != CalcService.Operation.empty {
+            //Run some math
+            
+            // A user selected an operator, but then selected another operator without first entering a number
+            if runningNumber != "" {
+                rightValStr = runningNumber
+                runningNumber = ""
+                
+                if currentOperation == CalcService.Operation.multiply {
+                    result = CalcService.shared.multiply(numAstr: leftValStr, numBstr: rightValStr)!
+                    
+                } else if currentOperation == CalcService.Operation.divide {
+                    result = CalcService.shared.divide(numAstr: leftValStr, numBstr: rightValStr)!
+                    
+                } else if currentOperation == CalcService.Operation.subtract {
+                    result = CalcService.shared.subtract(numAstr: leftValStr, numBstr: rightValStr)!
+                    
+                } else if currentOperation == CalcService.Operation.add {
+                    result = CalcService.shared.add(numAstr: leftValStr, numBstr: rightValStr)!
+                    print("Res:", result)
+                }
+                
+                leftValStr = result
+//                rawPrice = Double(result)!
+//                priceExcludingTax.text = "\(rawPrice)"
+            }
+            
+            currentOperation = operation
+            print("CO:", currentOperation)
+            
+        } else {
+            
+            // This is the first time an operator has been pressed
+            leftValStr = runningNumber
+            runningNumber = ""
+            currentOperation = operation
         }
     }
     

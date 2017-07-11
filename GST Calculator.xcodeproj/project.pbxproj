@@ -20,6 +20,8 @@
 		906FFF641F1219D50035EF3C /* Material Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906FFF5F1F1219D50035EF3C /* Material Design.swift */; };
 		906FFF661F12261E0035EF3C /* ThousandSeparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906FFF651F12261E0035EF3C /* ThousandSeparator.swift */; };
 		906FFF681F1228160035EF3C /* PercentageTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906FFF671F1228160035EF3C /* PercentageTextField.swift */; };
+		90C041151F137FC200CA9DA0 /* CalcService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C041131F137FC200CA9DA0 /* CalcService.swift */; };
+		90C041161F137FC200CA9DA0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C041141F137FC200CA9DA0 /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,8 @@
 		906FFF5F1F1219D50035EF3C /* Material Design.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Material Design.swift"; sourceTree = "<group>"; };
 		906FFF651F12261E0035EF3C /* ThousandSeparator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThousandSeparator.swift; sourceTree = "<group>"; };
 		906FFF671F1228160035EF3C /* PercentageTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PercentageTextField.swift; sourceTree = "<group>"; };
+		90C041131F137FC200CA9DA0 /* CalcService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalcService.swift; sourceTree = "<group>"; };
+		90C041141F137FC200CA9DA0 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +153,8 @@
 		906FFF571F12184F0035EF3C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				90C041131F137FC200CA9DA0 /* CalcService.swift */,
+				90C041141F137FC200CA9DA0 /* ViewController.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -320,6 +326,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90C041161F137FC200CA9DA0 /* ViewController.swift in Sources */,
 				906FFF2B1F120F190035EF3C /* BaseVC.swift in Sources */,
 				906FFF291F120F190035EF3C /* AppDelegate.swift in Sources */,
 				906FFF601F1219D50035EF3C /* CustomButton.swift in Sources */,
@@ -327,6 +334,7 @@
 				906FFF631F1219D50035EF3C /* DropMenuButton.swift in Sources */,
 				906FFF621F1219D50035EF3C /* CustomTextField.swift in Sources */,
 				906FFF661F12261E0035EF3C /* ThousandSeparator.swift in Sources */,
+				90C041151F137FC200CA9DA0 /* CalcService.swift in Sources */,
 				906FFF641F1219D50035EF3C /* Material Design.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
