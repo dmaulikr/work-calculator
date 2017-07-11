@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_0" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -27,11 +27,11 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u58-DS-uC2" customClass="CustomButton" customModule="GST_Calculator" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="533" width="320" height="35"/>
+                                <rect key="frame" x="0.0" y="279" width="414" height="35"/>
                                 <color key="backgroundColor" red="0.38823529410000002" green="0.36078431370000003" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="19"/>
                                 <state key="normal" title="Done">
@@ -42,13 +42,13 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="XRB-Mf-pMK">
-                                <rect key="frame" x="16" y="23" width="288" height="248.5"/>
+                                <rect key="frame" x="20" y="23" width="374" height="248"/>
                                 <subviews>
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="22h-Lu-3Vd" customClass="CustomView" customModule="GST_Calculator" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="288" height="40"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="40"/>
                                         <subviews>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9OQ-6a-onI">
-                                                <rect key="frame" x="25" y="2.5" width="238" height="35"/>
+                                                <rect key="frame" x="25" y="2.6666666666666679" width="324" height="35"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="fkJ-Gh-Hjq"/>
@@ -73,10 +73,10 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Z2c-ds-TR9">
-                                        <rect key="frame" x="0.0" y="50" width="288" height="59.5"/>
+                                        <rect key="frame" x="0.0" y="50" width="374" height="59.333333333333343"/>
                                         <subviews>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0.00" textAlignment="right" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="FN1-IM-cK8" customClass="CustomTextField" customModule="GST_Calculator" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="288" height="45"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="45"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="45" id="mKR-7S-OpI"/>
                                                 </constraints>
@@ -94,7 +94,7 @@
                                                 </connections>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price Excluding GST" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PNZ-1P-J4C">
-                                                <rect key="frame" x="0.0" y="45" width="288" height="14.5"/>
+                                                <rect key="frame" x="0.0" y="45" width="374" height="14.333333333333343"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -102,10 +102,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ut1-1C-An5">
-                                        <rect key="frame" x="0.0" y="119.5" width="288" height="59.5"/>
+                                        <rect key="frame" x="0.0" y="119.33333333333334" width="374" height="59.333333333333314"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="etJ-KX-Rab">
-                                                <rect key="frame" x="0.0" y="0.0" width="288" height="45"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="45"/>
                                                 <subviews>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1.0%" borderStyle="roundedRect" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="Fvs-kd-oMX" customClass="PercentageTextField" customModule="GST_Calculator" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="90" height="45"/>
@@ -123,7 +123,7 @@
                                                         </connections>
                                                     </textField>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0.00" textAlignment="right" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="UeU-AO-dAQ" customClass="CustomTextField" customModule="GST_Calculator" customModuleProvider="target">
-                                                        <rect key="frame" x="100" y="0.0" width="188" height="45"/>
+                                                        <rect key="frame" x="100" y="0.0" width="274" height="45"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="45" id="i3b-8w-jKS"/>
                                                         </constraints>
@@ -143,10 +143,10 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rDd-uv-SIY">
-                                                <rect key="frame" x="0.0" y="45" width="288" height="14.5"/>
+                                                <rect key="frame" x="0.0" y="45" width="374" height="14.333333333333314"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Percent" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nsq-FG-Lgr">
-                                                        <rect key="frame" x="0.0" y="0.0" width="100" height="14.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="100" height="14.333333333333314"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="100" id="Cky-fi-Pub"/>
                                                         </constraints>
@@ -155,7 +155,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GST Amount" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zqr-pJ-0fq">
-                                                        <rect key="frame" x="100" y="0.0" width="188" height="14.5"/>
+                                                        <rect key="frame" x="100" y="0.0" width="274" height="14.333333333333314"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
@@ -165,10 +165,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="HmX-np-fl5">
-                                        <rect key="frame" x="0.0" y="189" width="288" height="59.5"/>
+                                        <rect key="frame" x="0.0" y="188.66666666666663" width="374" height="59.333333333333343"/>
                                         <subviews>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0.00" textAlignment="right" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Ubg-Sa-cp2" customClass="CustomTextField" customModule="GST_Calculator" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="288" height="45"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="45.000000000000028"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="45" id="liK-YR-ctb"/>
                                                 </constraints>
@@ -186,7 +186,7 @@
                                                 </connections>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price Including GST" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dxd-JB-JR9">
-                                                <rect key="frame" x="0.0" y="45" width="288" height="14.5"/>
+                                                <rect key="frame" x="0.0" y="45.000000000000028" width="374" height="14.333333333333314"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -196,13 +196,13 @@
                                 </subviews>
                             </stackView>
                             <stackView clipsSubviews="YES" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="MOE-re-ff4" userLabel="Keyboard">
-                                <rect key="frame" x="0.0" y="274" width="320" height="294"/>
+                                <rect key="frame" x="0.0" y="442" width="414" height="294"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="yb8-z2-6H6">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="58"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="58"/>
                                         <subviews>
                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xBj-C0-cMC" customClass="CustomButton" customModule="GST_Calculator" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="79.5" height="58"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="102.66666666666667" height="58"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="58" id="EkS-B7-Vs1"/>
@@ -216,7 +216,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gCt-v5-7RE" customClass="CustomButton" customModule="GST_Calculator" customModuleProvider="target">
-                                                <rect key="frame" x="80.5" y="0.0" width="79" height="58"/>
+                                                <rect key="frame" x="103.66666666666666" y="0.0" width="102.99999999999997" height="58"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="58" id="u6Z-a4-rQM"/>
@@ -230,7 +230,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="66P-U9-MO5" customClass="CustomButton" customModule="GST_Calculator" customModuleProvider="target">
-                                                <rect key="frame" x="160.5" y="0.0" width="79.5" height="58"/>
+                                                <rect key="frame" x="207.66666666666669" y="0.0" width="102.66666666666669" height="58"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="58" id="3ax-we-AEU"/>
@@ -244,7 +244,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8O1-Dv-4uj" customClass="CustomButton" customModule="GST_Calculator" customModuleProvider="target">
-                                                <rect key="frame" x="241" y="0.0" width="79" height="58"/>
+                                                <rect key="frame" x="311.33333333333326" y="0.0" width="102.66666666666669" height="58"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="58" id="H4m-vm-zvr"/>
@@ -260,13 +260,13 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="UaV-6f-QCK">
-                                        <rect key="frame" x="0.0" y="59" width="320" height="235"/>
+                                        <rect key="frame" x="0.0" y="59" width="414" height="235"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="sU0-HP-gKt">
-                                                <rect key="frame" x="0.0" y="0.0" width="79.5" height="235"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="102.66666666666667" height="235"/>
                                                 <subviews>
                                                     <button opaque="NO" clipsSubviews="YES" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wSU-90-U4Y" customClass="CustomButton" customModule="GST_Calculator" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="79.5" height="58"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="102.66666666666667" height="58"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="58" id="Qkh-20-7J5"/>
@@ -280,7 +280,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" clipsSubviews="YES" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Alh-er-jMN" customClass="CustomButton" customModule="GST_Calculator" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="59" width="79.5" height="58"/>
+                                                        <rect key="frame" x="0.0" y="59" width="102.66666666666667" height="58"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="58" id="IPK-me-9IJ"/>
@@ -294,7 +294,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6aA-Fw-sri" customClass="CustomButton" customModule="GST_Calculator" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="118" width="79.5" height="58"/>
+                                                        <rect key="frame" x="0.0" y="118" width="102.66666666666667" height="58"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="58" id="VpA-63-OGN"/>
@@ -308,7 +308,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" clipsSubviews="YES" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PyB-Q6-Cba" customClass="CustomButton" customModule="GST_Calculator" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="177" width="79.5" height="58"/>
+                                                        <rect key="frame" x="0.0" y="177" width="102.66666666666667" height="58"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="58" id="QVI-lj-8xh"/>
@@ -324,10 +324,10 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="qzh-FL-8xW">
-                                                <rect key="frame" x="80.5" y="0.0" width="79" height="235"/>
+                                                <rect key="frame" x="103.66666666666666" y="0.0" width="102.99999999999997" height="235"/>
                                                 <subviews>
                                                     <button opaque="NO" clipsSubviews="YES" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q4o-FA-Tuw" customClass="CustomButton" customModule="GST_Calculator" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="79" height="58"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="102.99999999999999" height="58"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="58" id="Pwx-71-22f"/>
@@ -341,7 +341,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" clipsSubviews="YES" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q5u-4O-6DC" customClass="CustomButton" customModule="GST_Calculator" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="59" width="79" height="58"/>
+                                                        <rect key="frame" x="0.0" y="59" width="102.99999999999999" height="58"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="58" id="mYs-v4-LEs"/>
@@ -355,7 +355,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Pj-aV-k1s" customClass="CustomButton" customModule="GST_Calculator" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="118" width="79" height="58"/>
+                                                        <rect key="frame" x="0.0" y="118" width="102.99999999999999" height="58"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="58" id="W79-xw-pzw"/>
@@ -369,7 +369,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="alR-Ww-JXp" customClass="CustomButton" customModule="GST_Calculator" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="177" width="79" height="58"/>
+                                                        <rect key="frame" x="0.0" y="177" width="102.99999999999999" height="58"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="58" id="4XU-Tw-e4c"/>
@@ -385,10 +385,10 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="tVh-DK-dia">
-                                                <rect key="frame" x="160.5" y="0.0" width="79.5" height="235"/>
+                                                <rect key="frame" x="207.66666666666669" y="0.0" width="102.66666666666669" height="235"/>
                                                 <subviews>
                                                     <button opaque="NO" clipsSubviews="YES" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ef3-Rm-Jyl" customClass="CustomButton" customModule="GST_Calculator" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="79.5" height="58"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="102.66666666666666" height="58"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="58" id="wgq-Ms-0w2"/>
@@ -402,7 +402,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" clipsSubviews="YES" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6gf-ZU-9r7" customClass="CustomButton" customModule="GST_Calculator" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="59" width="79.5" height="58"/>
+                                                        <rect key="frame" x="0.0" y="59" width="102.66666666666666" height="58"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="58" id="7kf-RU-Evl"/>
@@ -416,7 +416,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GJp-bI-Cma" customClass="CustomButton" customModule="GST_Calculator" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="118" width="79.5" height="58"/>
+                                                        <rect key="frame" x="0.0" y="118" width="102.66666666666666" height="58"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="58" id="PN1-bU-q1Y"/>
@@ -430,7 +430,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7vq-Fd-Xm5" customClass="CustomButton" customModule="GST_Calculator" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="177" width="79.5" height="58"/>
+                                                        <rect key="frame" x="0.0" y="177" width="102.66666666666666" height="58"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="58" id="nca-04-ZhO"/>
@@ -446,10 +446,10 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="YyJ-50-z2c">
-                                                <rect key="frame" x="241" y="0.0" width="79" height="235"/>
+                                                <rect key="frame" x="311.33333333333326" y="0.0" width="102.66666666666669" height="235"/>
                                                 <subviews>
                                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vdQ-Kj-73N" customClass="CustomButton" customModule="GST_Calculator" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="79" height="117"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="102.66666666666669" height="117"/>
                                                         <color key="backgroundColor" red="0.38823529410000002" green="0.36078431370000003" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="30"/>
                                                         <state key="normal" title="+">
@@ -460,7 +460,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dEc-8G-Nhc" customClass="CustomButton" customModule="GST_Calculator" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="118" width="79" height="117"/>
+                                                        <rect key="frame" x="0.0" y="118" width="102.66666666666669" height="117"/>
                                                         <color key="backgroundColor" red="0.98039215686274506" green="0.59607843137254901" blue="0.043137254901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="30"/>
                                                         <state key="normal" title="=">
@@ -476,6 +476,19 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ua4-MC-9Fz">
+                                <rect key="frame" x="12" y="20" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="M3r-l6-W99"/>
+                                    <constraint firstAttribute="width" constant="50" id="uiB-W8-5Za"/>
+                                </constraints>
+                                <state key="normal" image="menu">
+                                    <color key="titleColor" red="0.38823529410000002" green="0.36078431370000003" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="7Ss-pQ-xPZ" kind="presentation" modalTransitionStyle="crossDissolve" id="DbO-S4-iIQ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.9365028211805555" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -483,12 +496,14 @@
                             <constraint firstItem="XRB-Mf-pMK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Drv-ua-CoW"/>
                             <constraint firstAttribute="trailing" secondItem="u58-DS-uC2" secondAttribute="trailing" id="Id9-qc-ewF"/>
                             <constraint firstItem="u58-DS-uC2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Mi4-Ff-u0B"/>
+                            <constraint firstItem="ua4-MC-9Fz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="12" id="Mt6-T3-SJR"/>
                             <constraint firstAttribute="trailing" secondItem="MOE-re-ff4" secondAttribute="trailing" id="OVb-Np-FGK"/>
                             <constraint firstItem="XRB-Mf-pMK" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="3" id="Utm-56-GpN"/>
                             <constraint firstItem="MOE-re-ff4" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="VXG-pM-E3S"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="u58-DS-uC2" secondAttribute="bottom" id="YGf-6N-0xW"/>
                             <constraint firstItem="u58-DS-uC2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="cD1-dA-rBu"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="MOE-re-ff4" secondAttribute="bottom" id="hsG-5Q-Mke"/>
+                            <constraint firstItem="ua4-MC-9Fz" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="ruj-M4-TOA"/>
+                            <constraint firstItem="u58-DS-uC2" firstAttribute="top" secondItem="XRB-Mf-pMK" secondAttribute="bottom" constant="8" id="twS-zJ-WvG"/>
                         </constraints>
                     </view>
                     <connections>
@@ -508,5 +523,105 @@
             </objects>
             <point key="canvasLocation" x="32.799999999999997" y="37.331334332833585"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="HAG-gf-TDH">
+            <objects>
+                <viewController id="7Ss-pQ-xPZ" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nOA-t3-vRD"/>
+                        <viewControllerLayoutGuide type="bottom" id="owK-Ed-DaA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="SCX-B9-Xbw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hrZ-Mg-BEy">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ChG-he-y2I">
+                                        <rect key="frame" x="28" y="29" width="358" height="23"/>
+                                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="19"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ol0-5Y-hBy">
+                                        <rect key="frame" x="8" y="25" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="WWP-nX-hwP"/>
+                                            <constraint firstAttribute="height" constant="30" id="s1X-Xh-vcB"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                        <state key="normal" title="←">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="presentation" modalTransitionStyle="crossDissolve" id="mB6-4Q-jQ1"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.98039215690000003" green="0.59607843140000005" blue="0.043137254899999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="4wJ-c0-PmR"/>
+                                    <constraint firstAttribute="bottom" secondItem="ChG-he-y2I" secondAttribute="bottom" constant="8" id="5Mi-j8-ZNR"/>
+                                    <constraint firstItem="ChG-he-y2I" firstAttribute="centerY" secondItem="ol0-5Y-hBy" secondAttribute="centerY" id="QSn-yK-dWS"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="ChG-he-y2I" secondAttribute="trailing" constant="20" id="d6K-q0-bjd"/>
+                                    <constraint firstItem="ChG-he-y2I" firstAttribute="leading" secondItem="hrZ-Mg-BEy" secondAttribute="leadingMargin" constant="20" id="hWr-Hk-yLS"/>
+                                    <constraint firstItem="ol0-5Y-hBy" firstAttribute="leading" secondItem="hrZ-Mg-BEy" secondAttribute="leading" constant="8" id="wdO-sz-L8D"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z3n-uA-xey" customClass="CustomButton" customModule="GST_Calculator" customModuleProvider="target">
+                                <rect key="frame" x="20" y="80" width="374" height="30"/>
+                                <color key="backgroundColor" red="0.38823529410000002" green="0.36078431370000003" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="f19-tA-S06"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="Turn off Ad for $0.99">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3PW-pg-5Yo" customClass="CustomButton" customModule="GST_Calculator" customModuleProvider="target">
+                                <rect key="frame" x="20" y="125" width="374" height="30"/>
+                                <color key="backgroundColor" red="0.98039215690000003" green="0.59607843140000005" blue="0.043137254899999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="blN-nB-WQn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="Restore Purchses">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="3PW-pg-5Yo" firstAttribute="top" secondItem="Z3n-uA-xey" secondAttribute="bottom" constant="15" id="BtI-BG-MQG"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Z3n-uA-xey" secondAttribute="trailing" id="a2E-Pr-4ts"/>
+                            <constraint firstAttribute="trailing" secondItem="hrZ-Mg-BEy" secondAttribute="trailing" id="cE5-X1-gQd"/>
+                            <constraint firstItem="hrZ-Mg-BEy" firstAttribute="top" secondItem="SCX-B9-Xbw" secondAttribute="top" id="nhD-ul-ugi"/>
+                            <constraint firstItem="Z3n-uA-xey" firstAttribute="leading" secondItem="SCX-B9-Xbw" secondAttribute="leadingMargin" id="snN-io-Shz"/>
+                            <constraint firstItem="hrZ-Mg-BEy" firstAttribute="leading" secondItem="SCX-B9-Xbw" secondAttribute="leading" id="tbF-p7-5f9"/>
+                            <constraint firstItem="3PW-pg-5Yo" firstAttribute="trailing" secondItem="SCX-B9-Xbw" secondAttribute="trailingMargin" id="thi-hf-j2C"/>
+                            <constraint firstItem="3PW-pg-5Yo" firstAttribute="leading" secondItem="SCX-B9-Xbw" secondAttribute="leadingMargin" id="vPE-af-dYG"/>
+                            <constraint firstItem="Z3n-uA-xey" firstAttribute="top" secondItem="hrZ-Mg-BEy" secondAttribute="bottom" constant="20" id="ypx-lC-bjU"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="570-x3-qFC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="892.5" y="36.971830985915496"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="menu" width="30" height="30"/>
+    </resources>
 </document>
