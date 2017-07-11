@@ -19,6 +19,18 @@ class CustomTextField: UITextField {
         }  
     }
     
+    @IBInspectable var borderWidth: CGFloat = 0 {
+        didSet {
+            setupView()
+        }
+    }
+    
+    @IBInspectable var borderColor: UIColor? {
+        didSet {
+            setupView()
+        }
+    }
+    
     override func textRect(forBounds bounds: CGRect) -> CGRect {
         return bounds.insetBy(dx: inset, dy: 10)
     }
@@ -35,6 +47,8 @@ class CustomTextField: UITextField {
     
     func setupView() {
         self.layer.cornerRadius = cornerRadius
+        self.layer.borderWidth = borderWidth
+        self.layer.borderColor = borderColor?.cgColor
     }
     
 }

@@ -118,7 +118,7 @@
                                                         <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="28"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                         <connections>
-                                                            <action selector="beginEditing:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="5q9-Is-Awd"/>
+                                                            <action selector="beginEditingPercentage:" destination="BYZ-38-t0r" eventType="editingDidBegin" id="l5v-2J-U2i"/>
                                                             <action selector="taxPercentageEdited:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="cSP-oD-c6M"/>
                                                         </connections>
                                                     </textField>
@@ -136,7 +136,7 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
-                                                            <action selector="beginEditing:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="gGP-nk-WT9"/>
+                                                            <action selector="beginEditingAmount:" destination="BYZ-38-t0r" eventType="editingDidBegin" id="x5F-vu-2BW"/>
                                                             <action selector="taxAmountEdited:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="KUA-V0-wIy"/>
                                                         </connections>
                                                     </textField>
@@ -179,9 +179,12 @@
                                                     <userDefinedRuntimeAttribute type="number" keyPath="inset">
                                                         <real key="value" value="25"/>
                                                     </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="beginEditing:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="mZ3-6K-1yE"/>
+                                                    <action selector="beginEditingTotal:" destination="BYZ-38-t0r" eventType="editingDidBegin" id="tEo-dm-anu"/>
                                                     <action selector="totalEdited:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="Olo-wf-VBE"/>
                                                 </connections>
                                             </textField>

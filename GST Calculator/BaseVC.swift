@@ -49,6 +49,10 @@ class BaseVC: UIViewController, UITextFieldDelegate {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
         doneButton.isHidden = true
+        
+        priceExcludingTax.layer.borderWidth = 0.0
+        taxAmount.layer.borderWidth = 0.0
+        total.layer.borderWidth = 0.0
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -63,6 +67,10 @@ class BaseVC: UIViewController, UITextFieldDelegate {
         
         self.view.endEditing(true)
         doneButton.isHidden = true
+        
+        priceExcludingTax.layer.borderWidth = 0.0
+        taxAmount.layer.borderWidth = 0.0
+        total.layer.borderWidth = 0.0
     }
     
     
@@ -176,8 +184,48 @@ class BaseVC: UIViewController, UITextFieldDelegate {
         output.text = ""
         result = ""
         currentOperation = CalcService.Operation.empty
+        
+        priceExcludingTax.layer.borderWidth = 1.0
+        taxAmount.layer.borderWidth = 0.0
+        total.layer.borderWidth = 0.0
+        priceExcludingTax.layer.borderColor = UIColor.orange.cgColor
     }
     
+    @IBAction func beginEditingAmount(_ sender: Any) {
+        
+        runningNumber = "0"
+        leftValStr = ""
+        rightValStr = ""
+        output.text = ""
+        result = ""
+        currentOperation = CalcService.Operation.empty
+        
+        priceExcludingTax.layer.borderWidth = 0.0
+        taxAmount.layer.borderWidth = 1.0
+        total.layer.borderWidth = 0.0
+        taxAmount.layer.borderColor = UIColor.orange.cgColor
+    }
+    
+    @IBAction func beginEditingTotal(_ sender: Any) {
+        
+        runningNumber = "0"
+        leftValStr = ""
+        rightValStr = ""
+        output.text = ""
+        result = ""
+        currentOperation = CalcService.Operation.empty
+        
+        priceExcludingTax.layer.borderWidth = 0.0
+        taxAmount.layer.borderWidth = 0.0
+        total.layer.borderWidth = 1.0
+        total.layer.borderColor = UIColor.orange.cgColor
+    }
+    
+    @IBAction func beginEditingPercentage(_ sender: Any) {
+        priceExcludingTax.layer.borderWidth = 0.0
+        taxAmount.layer.borderWidth = 0.0
+        total.layer.borderWidth = 0.0
+    }
     
     //Keyboard frame sizing
     func keyboardWillShow(notification: NSNotification) {
