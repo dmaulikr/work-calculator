@@ -36,9 +36,12 @@
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="22h-Lu-3Vd" customClass="CustomView" customModule="GST_Calculator" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="288" height="40"/>
                                         <subviews>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9OQ-6a-onI">
-                                                <rect key="frame" x="25" y="8.5" width="238" height="23"/>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9OQ-6a-onI">
+                                                <rect key="frame" x="25" y="2.5" width="238" height="35"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="35" id="fkJ-Gh-Hjq"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                 <color key="textColor" red="0.13725490200000001" green="0.13725490200000001" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -299,6 +302,9 @@
                                                         <state key="normal" title=".">
                                                             <color key="titleColor" red="0.13725490196078433" green="0.13725490196078433" blue="0.13725490196078433" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="dotTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Pd7-4i-WBg"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -418,6 +424,9 @@
                                                         <state key="normal" title="←">
                                                             <color key="titleColor" red="0.13725490196078433" green="0.13725490196078433" blue="0.13725490196078433" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="delTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9O4-Jf-xBZ"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -465,6 +474,8 @@
                     </view>
                     <connections>
                         <outlet property="clearButton" destination="xBj-C0-cMC" id="9ys-Iy-Eb7"/>
+                        <outlet property="delButton" destination="7vq-Fd-Xm5" id="rSg-Sa-tg7"/>
+                        <outlet property="dotButton" destination="PyB-Q6-Cba" id="2UM-ah-vzY"/>
                         <outlet property="output" destination="9OQ-6a-onI" id="hd7-es-Ume"/>
                         <outlet property="priceExcludingTax" destination="FN1-IM-cK8" id="uGz-KL-p2e"/>
                         <outlet property="taxAmount" destination="UeU-AO-dAQ" id="u1P-OP-ILA"/>

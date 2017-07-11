@@ -15,6 +15,8 @@ class BaseVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var taxPercentage: UITextField!
     @IBOutlet weak var total: UITextField!
     @IBOutlet weak var clearButton: UIButton!
+    @IBOutlet weak var delButton: UIButton!
+    @IBOutlet weak var dotButton: UIButton!
     @IBOutlet weak var output: UILabel!
     
     // Basic variables
@@ -201,7 +203,18 @@ class BaseVC: UIViewController, UITextFieldDelegate {
     
     @IBAction func numberPressed(_ btn: UIButton!) {
         
-        runningNumber += "\(btn.tag)"
+        if runningNumber != "0" {
+            runningNumber += "\(btn.tag)"
+        } else {
+            runningNumber = ""
+            runningNumber += "\(btn.tag)"
+        }
+        output.text = runningNumber
+    }
+    
+    @IBAction func dotTapped(_ btn: UIButton!) {
+        
+        runningNumber += "."
         output.text = runningNumber
     }
     
@@ -223,11 +236,15 @@ class BaseVC: UIViewController, UITextFieldDelegate {
         print("RN:", runningNumber)
         print("LVS", leftValStr)
         print("RVS", rightValStr)
-//        priceExcludingTax.text = ""
     }
     
     @IBAction func onEqualPressed(_ sender: AnyObject) {
         processOperation(currentOperation)
+        
+        if result == "nan" {
+            result = "0"
+            output.text = result
+        }
         
         print("= pressed")
         print("RN:", runningNumber)
@@ -240,12 +257,30 @@ class BaseVC: UIViewController, UITextFieldDelegate {
         
 //        priceExcludingTax.text = ""
         runningNumber = "0"
-        leftValStr = "0"
-        rightValStr = "0"
-        output.text = "0"
-        result = "0"
+        leftValStr = ""
+        rightValStr = ""
+        output.text = ""
+        result = ""
         
         currentOperation = CalcService.Operation.empty
+    }
+    
+    @IBAction func delTapped(_ sender: AnyObject) {
+        
+        if runningNumber != "" {
+            
+            runningNumber = String(runningNumber.characters.dropLast())
+            output.text = runningNumber
+            
+            if runningNumber == "" {
+                runningNumber = "0"
+                output.text = "0"
+            }
+            
+        } else {
+            runningNumber = "0"
+            output.text = ""
+        }
     }
     
     func processOperation(_ operation: CalcService.Operation) {
@@ -259,17 +294,36 @@ class BaseVC: UIViewController, UITextFieldDelegate {
                 runningNumber = ""
                 
                 if currentOperation == CalcService.Operation.multiply {
-                    result = CalcService.shared.multiply(numAstr: leftValStr, numBstr: rightValStr)!
+                    if let res = CalcService.shared.multiply(numAstr: leftValStr, numBstr: rightValStr) {
+                        result = res
+                    } else {
+                        result = "0"
+                        print("NO return value")
+                    }
                     
                 } else if currentOperation == CalcService.Operation.divide {
-                    result = CalcService.shared.divide(numAstr: leftValStr, numBstr: rightValStr)!
+                    if let res = CalcService.shared.divide(numAstr: leftValStr, numBstr: rightValStr) {
+                        result = res
+                    } else {
+                        result = "0"
+                        print("NO return value")
+                    }
                     
                 } else if currentOperation == CalcService.Operation.subtract {
-                    result = CalcService.shared.subtract(numAstr: leftValStr, numBstr: rightValStr)!
+                    if let res = CalcService.shared.subtract(numAstr: leftValStr, numBstr: rightValStr) {
+                        result = res
+                    } else {
+                        result = "0"
+                        print("NO return value")
+                    }
                     
                 } else if currentOperation == CalcService.Operation.add {
-                    result = CalcService.shared.add(numAstr: leftValStr, numBstr: rightValStr)!
-                    print("Res:", result)
+                    if let res = CalcService.shared.add(numAstr: leftValStr, numBstr: rightValStr) {
+                        result = res
+                    } else {
+                        result = "0"
+                        print("NO return value")
+                    }
                 }
                 
                 leftValStr = result
