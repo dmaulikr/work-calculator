@@ -30,7 +30,7 @@ class BaseVC: UIViewController, UITextFieldDelegate {
     var taxableAmount = 0.0
     
     // Variables for calculations
-    var runningNumber = ""
+    var runningNumber = "0"
     var leftValStr = ""
     var rightValStr = ""
     var result = ""
@@ -319,11 +319,9 @@ class BaseVC: UIViewController, UITextFieldDelegate {
     
     @IBAction func onEqualPressed(_ sender: AnyObject) {
         processOperation(currentOperation)
-        
-        if result == "nan" {
-            result = "0"
-            output.text = result
-        }
+//        if runningNumber == "" {
+//            runningNumber = "0"
+//        }
     }
     
     @IBAction func onClearPressed(_ sender: AnyObject) {
@@ -422,7 +420,7 @@ class BaseVC: UIViewController, UITextFieldDelegate {
             
             // This is the first time an operator has been pressed
             leftValStr = runningNumber
-            runningNumber = ""
+            runningNumber = "0"
             currentOperation = operation
         }
     }
