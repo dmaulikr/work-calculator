@@ -362,6 +362,7 @@ class BaseVC: UIViewController, UITextFieldDelegate {
             runningNumber = "0"
             output.text = ""
         }
+        leftOperand.text = leftValStr
     }
     
     func processOperation(_ operation: CalcService.Operation) {
