@@ -18,6 +18,8 @@ class BaseVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var delButton: UIButton!
     @IBOutlet weak var dotButton: UIButton!
     @IBOutlet weak var output: UILabel!
+    @IBOutlet weak var operatorLbl: UILabel!
+    @IBOutlet weak var leftOperand: UILabel!
     @IBOutlet weak var keyboard: UIStackView!
     @IBOutlet weak var doneButton: CustomButton!
     
@@ -182,6 +184,8 @@ class BaseVC: UIViewController, UITextFieldDelegate {
         leftValStr = ""
         rightValStr = ""
         output.text = ""
+        operatorLbl.text = ""
+        leftOperand.text = ""
         result = ""
         currentOperation = CalcService.Operation.empty
         
@@ -197,6 +201,8 @@ class BaseVC: UIViewController, UITextFieldDelegate {
         leftValStr = ""
         rightValStr = ""
         output.text = ""
+        operatorLbl.text = ""
+        leftOperand.text = ""
         result = ""
         currentOperation = CalcService.Operation.empty
         
@@ -212,6 +218,8 @@ class BaseVC: UIViewController, UITextFieldDelegate {
         leftValStr = ""
         rightValStr = ""
         output.text = ""
+        operatorLbl.text = ""
+        leftOperand.text = ""
         result = ""
         currentOperation = CalcService.Operation.empty
         
@@ -287,18 +295,26 @@ class BaseVC: UIViewController, UITextFieldDelegate {
     
     @IBAction func onDividePressed(_ sender: AnyObject) {
         processOperation(CalcService.Operation.divide)
+        operatorLbl.text = currentOperation.rawValue
+        leftOperand.text = leftValStr
     }
     
     @IBAction func onMultiplyPressed(_ sender: AnyObject) {
         processOperation(CalcService.Operation.multiply)
+        operatorLbl.text = currentOperation.rawValue
+        leftOperand.text = leftValStr
     }
     
     @IBAction func onSubtractPressed(_ sender: AnyObject) {
         processOperation(CalcService.Operation.subtract)
+        operatorLbl.text = currentOperation.rawValue
+        leftOperand.text = leftValStr
     }
     
     @IBAction func onAddPressed(_ sender: AnyObject) {
         processOperation(CalcService.Operation.add)
+        operatorLbl.text = currentOperation.rawValue
+        leftOperand.text = leftValStr
     }
     
     @IBAction func onEqualPressed(_ sender: AnyObject) {
@@ -318,6 +334,8 @@ class BaseVC: UIViewController, UITextFieldDelegate {
         output.text = ""
         result = ""
         currentOperation = CalcService.Operation.empty
+        leftOperand.text = leftValStr
+        operatorLbl.text = currentOperation.rawValue
         
         priceExcludingTax.text = ""
         taxAmount.text = ""
@@ -349,7 +367,6 @@ class BaseVC: UIViewController, UITextFieldDelegate {
     func processOperation(_ operation: CalcService.Operation) {
         
         if currentOperation != CalcService.Operation.empty {
-            //Run some math
             
             // A user selected an operator, but then selected another operator without first entering a number
             if runningNumber != "" {
@@ -390,7 +407,7 @@ class BaseVC: UIViewController, UITextFieldDelegate {
                 }
                 
                 leftValStr = result
-                output.text = result
+                output.text = rightValStr
                 priceExcludingTax.text = result
                 priceExcludingTaxEdited((Any).self)
                 
@@ -398,6 +415,7 @@ class BaseVC: UIViewController, UITextFieldDelegate {
             
             currentOperation = operation
             print("CO:", currentOperation)
+            operatorLbl.text = operation.rawValue
             
         } else {
             

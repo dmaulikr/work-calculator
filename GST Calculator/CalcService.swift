@@ -12,11 +12,11 @@ class CalcService {
     static let shared = CalcService()
     
     enum Operation: String {
-        case divide = "/"
-        case multiply = "*"
-        case subtract = "-"
+        case divide = "÷"
+        case multiply = "×"
+        case subtract = "−"
         case add = "+"
-        case empty = "Empty"
+        case empty = ""
     }
     
     func multiply(numAstr: String, numBstr: String) -> String? {
