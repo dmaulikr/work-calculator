@@ -7,28 +7,33 @@
 //
 
 import UIKit
-import CoreData
 import StoreKit
 
 class SettingsVC: UIViewController, SKProductsRequestDelegate, SKPaymentTransactionObserver {
     
-    var ADs = [Ad]()
+    let AD_FREE_ID = "com.andriiHalabuda.GSTCalculator.ad"
     var products = [SKProduct]()
+    var productID = ""
     let appUrl = URL(string: "itms-apps://itunes.apple.com/app/id1178333093") //<- Change!!!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        if ADs.count == 0 {
-            updateContent()
+        
+        print("Purchased:", adFreePurchaseMade)
+        
+        if adFreePurchaseMade {
+            // Close Ad
+        } else {
+            // Show Ad
         }
+        
         requestProducts()
     }
     
     // Request products from Apple
     func requestProducts() {
-        let IDs : Set<String> = ["com.andriiHalabuda.GSTCalculator.ad"]
-        let productsRequest = SKProductsRequest(productIdentifiers: IDs)
+        let productIdentifiers : Set<String> = [AD_FREE_ID]
+        let productsRequest = SKProductsRequest(productIdentifiers: productIdentifiers)
         productsRequest.delegate = self
         productsRequest.start()
     }
@@ -42,6 +47,7 @@ class SettingsVC: UIViewController, SKProductsRequestDelegate, SKPaymentTransact
     
     // Restore previous purchases
     @IBAction func restoreBtnTapped(_ sender: Any) {
+        SKPaymentQueue.default().add(self)
         SKPaymentQueue.default().restoreCompletedTransactions()
     }
     
@@ -53,8 +59,8 @@ class SettingsVC: UIViewController, SKProductsRequestDelegate, SKPaymentTransact
             switch transaction.transactionState {
             case .purchased:
                 print("Purchased")
-                unlockAdFree(transaction.payment.productIdentifier)
                 SKPaymentQueue.default().finishTransaction(transaction)
+                unlockAdFree()
                 break
             case .failed:
                 print("Failed")
@@ -62,7 +68,6 @@ class SettingsVC: UIViewController, SKProductsRequestDelegate, SKPaymentTransact
                 break
             case .restored:
                 print("Restored")
-                unlockAdFree(transaction.payment.productIdentifier)
                 SKPaymentQueue.default().finishTransaction(transaction)
                 break
             case .purchasing:
@@ -75,53 +80,65 @@ class SettingsVC: UIViewController, SKProductsRequestDelegate, SKPaymentTransact
         }
     }
     
-    // Show an art when purchased or restored
-    func unlockAdFree(_ productIdentifier:String) {
-        if ADs[0].productIdentifier == productIdentifier {
-            ADs[0].purchased = true
-            
-            let appDelegate = UIApplication.shared.delegate as! AppDelegate
-            let context = appDelegate.managedObjectContext
-            do {
-                try context.save()
-            } catch {}
-        }
-    }
-    
-    func updateContent() {
-        createAd("BannerAd", productIdentifier: "com.andriiHalabuda.GSTCalculator.ad", purchased: false)
-    }
-    
-    // Creating ad from CoreData Entity -Ad-
-    func createAd(_ title:String, productIdentifier:String, purchased:Bool) {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.managedObjectContext
-        
-        if let entity = NSEntityDescription.entity(forEntityName: "Ad", in: context) {
-            let ad = NSManagedObject(entity: entity, insertInto: context) as! Ad
-            ad.title = title
-            ad.productIdentifier = productIdentifier
-            ad.purchased = purchased
-        }
-        
-        do {
-            try context.save()
-        } catch {}
-    }
-    
     @IBAction func purchaseTapped(_ sender: Any) {
-        let ad = self.ADs[0]
-        if !ad.purchased {
-            if products[0].productIdentifier == ad.productIdentifier {
-                SKPaymentQueue.default().add(self)
-                let payment = SKPayment(product: products[0])
-                SKPaymentQueue.default().add(payment)
-            }
+        
+        if products.count != 0 {
+            purchaseProduct(product: products[0])
         }
     }
     
     @IBAction func rateTapped(_ sender: Any) {
         
         UIApplication.shared.open(appUrl!, options: [:], completionHandler: nil)
+    }
+    
+    func paymentQueueRestoreCompletedTransactionsFinished(_ queue: SKPaymentQueue) {
+        adFreePurchaseMade = true
+        UserDefaults.standard.set(adFreePurchaseMade, forKey: "adFreePurchaseMade")
+        
+        showAlertWithTitle("GST Calculator", message: "You've successfully restored your purchase!")
+    }
+    
+    // MARK: - MAKE PURCHASE OF A PRODUCT
+    func canMakePurchases() -> Bool { return SKPaymentQueue.canMakePayments() }
+    
+    func purchaseProduct(product: SKProduct) {
+        if self.canMakePurchases() {
+            let payment = SKPayment(product: product)
+            SKPaymentQueue.default().add(self)
+            SKPaymentQueue.default().add(payment)
+            
+            print("PRODUCT TO PURCHASE: \(product.productIdentifier)")
+            productID = product.productIdentifier
+            
+            // IAP Purchases dsabled on the Device
+        } else {
+            showAlertWithTitle("GST Calculator", message: "Purchases are disabled in your device!")
+        }
+    }
+    
+    func unlockAdFree() {
+        if productID == AD_FREE_ID {
+            
+            adFreePurchaseMade = true
+            UserDefaults.standard.set(adFreePurchaseMade, forKey: "adFreePurchaseMade")
+            
+            // Action after purchased
+            showAlertWithTitle("GST Calculator", message: "You've successfully enabled Ad Free version!")
+        }
+    }
+    
+    // Alert
+    func showAlertWithTitle(_ title:String, message: String) {
+        
+        let alertVC = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertVC.addAction(okAction)
+        
+        DispatchQueue.main.async { () -> Void in
+            
+            self.present(alertVC, animated: true, completion: nil)
+        }
     }
 }

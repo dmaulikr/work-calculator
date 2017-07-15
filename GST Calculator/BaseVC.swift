@@ -46,6 +46,15 @@ class BaseVC: UIViewController, UITextFieldDelegate {
         total.delegate = self
         
         addObserverForKeyboard()
+        
+        print("Purchased:", adFreePurchaseMade)
+        
+        if adFreePurchaseMade {
+            // Close Ad
+        } else {
+            // Show Ad
+        }
+
     }
     
     //Keyboard dismiss
