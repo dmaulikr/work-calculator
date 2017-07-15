@@ -14,6 +14,7 @@ class SettingsVC: UIViewController, SKProductsRequestDelegate, SKPaymentTransact
     
     var ADs = [Ad]()
     var products = [SKProduct]()
+    let appUrl = URL(string: "itms-apps://itunes.apple.com/app/id1178333093") //<- Change!!!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -117,5 +118,10 @@ class SettingsVC: UIViewController, SKProductsRequestDelegate, SKPaymentTransact
                 SKPaymentQueue.default().add(payment)
             }
         }
+    }
+    
+    @IBAction func rateTapped(_ sender: Any) {
+        
+        UIApplication.shared.open(appUrl!, options: [:], completionHandler: nil)
     }
 }

@@ -549,6 +549,7 @@
                         <outlet property="operatorLbl" destination="9Sx-qn-HZf" id="Q3z-oR-Mv7"/>
                         <outlet property="output" destination="9OQ-6a-onI" id="hd7-es-Ume"/>
                         <outlet property="priceExcludingTax" destination="FN1-IM-cK8" id="uGz-KL-p2e"/>
+                        <outlet property="tapToChangeLbl" destination="nsq-FG-Lgr" id="56J-O9-YmJ"/>
                         <outlet property="taxAmount" destination="UeU-AO-dAQ" id="u1P-OP-ILA"/>
                         <outlet property="taxPercentage" destination="Fvs-kd-oMX" id="DK0-oy-XhN"/>
                         <outlet property="total" destination="Ubg-Sa-cp2" id="7Gn-pV-beG"/>
@@ -642,15 +643,37 @@
                                     <action selector="restoreBtnTapped:" destination="7Ss-pQ-xPZ" eventType="touchUpInside" id="rsh-xd-kqW"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lhb-fc-tMH" customClass="CustomButton" customModule="GST_Calculator" customModuleProvider="target">
+                                <rect key="frame" x="16" y="180" width="288" height="35"/>
+                                <color key="backgroundColor" red="0.98039215690000003" green="0.59607843140000005" blue="0.043137254899999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="AN8-Lh-3jq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="Rate the app">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="rateTapped:" destination="7Ss-pQ-xPZ" eventType="touchUpInside" id="75d-Zy-h5u"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="3PW-pg-5Yo" firstAttribute="top" secondItem="Z3n-uA-xey" secondAttribute="bottom" constant="15" id="BtI-BG-MQG"/>
+                            <constraint firstItem="Lhb-fc-tMH" firstAttribute="trailing" secondItem="SCX-B9-Xbw" secondAttribute="trailingMargin" id="JHJ-Yh-xIH"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Z3n-uA-xey" secondAttribute="trailing" id="a2E-Pr-4ts"/>
+                            <constraint firstItem="Lhb-fc-tMH" firstAttribute="top" secondItem="3PW-pg-5Yo" secondAttribute="bottom" constant="15" id="c4Z-1Z-U8b"/>
                             <constraint firstAttribute="trailing" secondItem="hrZ-Mg-BEy" secondAttribute="trailing" id="cE5-X1-gQd"/>
                             <constraint firstItem="hrZ-Mg-BEy" firstAttribute="top" secondItem="SCX-B9-Xbw" secondAttribute="top" id="nhD-ul-ugi"/>
                             <constraint firstItem="Z3n-uA-xey" firstAttribute="leading" secondItem="SCX-B9-Xbw" secondAttribute="leadingMargin" id="snN-io-Shz"/>
                             <constraint firstItem="hrZ-Mg-BEy" firstAttribute="leading" secondItem="SCX-B9-Xbw" secondAttribute="leading" id="tbF-p7-5f9"/>
+                            <constraint firstItem="Lhb-fc-tMH" firstAttribute="leading" secondItem="SCX-B9-Xbw" secondAttribute="leadingMargin" id="tbN-W6-1Fv"/>
                             <constraint firstItem="3PW-pg-5Yo" firstAttribute="trailing" secondItem="SCX-B9-Xbw" secondAttribute="trailingMargin" id="thi-hf-j2C"/>
                             <constraint firstItem="3PW-pg-5Yo" firstAttribute="leading" secondItem="SCX-B9-Xbw" secondAttribute="leadingMargin" id="vPE-af-dYG"/>
                             <constraint firstItem="Z3n-uA-xey" firstAttribute="top" secondItem="hrZ-Mg-BEy" secondAttribute="bottom" constant="20" id="ypx-lC-bjU"/>

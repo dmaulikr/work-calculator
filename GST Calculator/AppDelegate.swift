@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         SwiftlyRater.sharedInstance.appId = "1178333093" // <- Change AppID !!!!
-        SwiftlyRater.sharedInstance.usesUntilPrompt = 1
+        SwiftlyRater.sharedInstance.usesUntilPrompt = 1 // <- Delete !!!
         return true
     }
 

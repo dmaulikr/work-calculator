@@ -22,6 +22,7 @@ class BaseVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var leftOperand: UILabel!
     @IBOutlet weak var keyboard: UIStackView!
     @IBOutlet weak var doneButton: CustomButton!
+    @IBOutlet weak var tapToChangeLbl: UILabel!
     
     // Basic variables
     var rawPrice = 0.0
@@ -152,6 +153,8 @@ class BaseVC: UIViewController, UITextFieldDelegate {
             total.text = totalPrice.round(to: 2).formattedWithSeparator
             taxPercentage.text = "\(taxPercent.round(to: 2))%"
         }
+        
+        tapToChangeLbl.layer.opacity = 1.0
     }
     
     @IBAction func totalEdited(_ sender: Any) {
@@ -233,6 +236,8 @@ class BaseVC: UIViewController, UITextFieldDelegate {
         priceExcludingTax.layer.borderWidth = 0.0
         taxAmount.layer.borderWidth = 0.0
         total.layer.borderWidth = 0.0
+        
+        tapToChangeLbl.layer.opacity = 0.25
     }
     
     //Keyboard frame sizing
