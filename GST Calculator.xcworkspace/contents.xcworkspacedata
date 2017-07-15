@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:GST Calculator/Ad+CoreDataClass.swift">
+   </FileRef>
+   <FileRef
+      location = "group:GST Calculator/Ad+CoreDataProperties.swift">
+   </FileRef>
+   <FileRef
       location = "group:GST Calculator.xcodeproj">
    </FileRef>
    <FileRef

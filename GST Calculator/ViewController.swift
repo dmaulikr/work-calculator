@@ -1,8 +1,8 @@
 //
-//  SettingsVC.swift
-//  GST Calculator
+//  ViewController.swift
+//  Store
 //
-//  Created by Andrew Foster on 7/11/17.
+//  Created by Andrew Foster on 6/6/17.
 //  Copyright © 2017 Andrii Halabuda. All rights reserved.
 //
 
@@ -10,24 +10,21 @@ import UIKit
 import CoreData
 import StoreKit
 
-class SettingsVC: UIViewController, SKProductsRequestDelegate, SKPaymentTransactionObserver {
+class ViewController: UIViewController, SKProductsRequestDelegate, SKPaymentTransactionObserver {
     
     var ADs = [Ad]()
     var products = [SKProduct]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        if ADs.count == 0 {
-            updateContent()
-        }
+        
         requestProducts()
     }
     
     // Request products from Apple
     func requestProducts() {
-        let IDs : Set<String> = ["com.andriiHalabuda.GSTCalculator.ad"]
-        let productsRequest = SKProductsRequest(productIdentifiers: IDs)
+        let ids : Set<String> = ["com.losAngelesBoy.Store.tree"]
+        let productsRequest = SKProductsRequest(productIdentifiers: ids)
         productsRequest.delegate = self
         productsRequest.start()
     }
@@ -52,7 +49,7 @@ class SettingsVC: UIViewController, SKProductsRequestDelegate, SKPaymentTransact
             switch transaction.transactionState {
             case .purchased:
                 print("Purchased")
-                unlockAdFree(transaction.payment.productIdentifier)
+                unlockArt(transaction.payment.productIdentifier)
                 SKPaymentQueue.default().finishTransaction(transaction)
                 break
             case .failed:
@@ -61,7 +58,7 @@ class SettingsVC: UIViewController, SKProductsRequestDelegate, SKPaymentTransact
                 break
             case .restored:
                 print("Restored")
-                unlockAdFree(transaction.payment.productIdentifier)
+                unlockArt(transaction.payment.productIdentifier)
                 SKPaymentQueue.default().finishTransaction(transaction)
                 break
             case .purchasing:
@@ -75,7 +72,8 @@ class SettingsVC: UIViewController, SKProductsRequestDelegate, SKPaymentTransact
     }
     
     // Show an art when purchased or restored
-    func unlockAdFree(_ productIdentifier:String) {
+    func unlockArt(_ productIdentifier: String) {
+        
         if ADs[0].productIdentifier == productIdentifier {
             ADs[0].purchased = true
             
@@ -85,10 +83,6 @@ class SettingsVC: UIViewController, SKProductsRequestDelegate, SKPaymentTransact
                 try context.save()
             } catch {}
         }
-    }
-    
-    func updateContent() {
-        createAd("BannerAd", productIdentifier: "com.andriiHalabuda.GSTCalculator.ad", purchased: false)
     }
     
     // Creating ad from CoreData Entity -Ad-
@@ -108,14 +102,18 @@ class SettingsVC: UIViewController, SKProductsRequestDelegate, SKPaymentTransact
         } catch {}
     }
     
-    @IBAction func purchaseTapped(_ sender: Any) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let ad = self.ADs[0]
         if !ad.purchased {
-            if products[0].productIdentifier == ad.productIdentifier {
-                SKPaymentQueue.default().add(self)
-                let payment = SKPayment(product: products[0])
-                SKPaymentQueue.default().add(payment)
+            for product in self.products {
+                if product.productIdentifier == ad.productIdentifier {
+                    SKPaymentQueue.default().add(self)
+                    let payment = SKPayment(product: product)
+                    SKPaymentQueue.default().add(payment)
+                }
             }
         }
     }
+
 }
+
