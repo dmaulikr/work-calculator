@@ -54,7 +54,10 @@ class BaseVC: UIViewController, UITextFieldDelegate {
         } else {
             // Show Ad
         }
-
+        
+        let left = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(BaseVC.swipeAction))
+        left.edges = .left
+        self.view.addGestureRecognizer(left)
     }
     
     //Keyboard dismiss
@@ -284,6 +287,10 @@ class BaseVC: UIViewController, UITextFieldDelegate {
         DispatchQueue.main.async { () -> Void in
             self.present(alertVC, animated: true, completion: nil)
         }
+    }
+    
+    func swipeAction() {
+        performSegue(withIdentifier: "goSettings", sender: nil)
     }
     
     //******************************
