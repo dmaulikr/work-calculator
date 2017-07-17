@@ -28,6 +28,7 @@
 		906FFF641F1219D50035EF3C /* Material Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906FFF5F1F1219D50035EF3C /* Material Design.swift */; };
 		906FFF661F12261E0035EF3C /* ThousandSeparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906FFF651F12261E0035EF3C /* ThousandSeparator.swift */; };
 		906FFF681F1228160035EF3C /* PercentageTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906FFF671F1228160035EF3C /* PercentageTextField.swift */; };
+		90A4675E1F1D3F68002A47B3 /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90A4675D1F1D3F68002A47B3 /* GoogleMobileAds.framework */; };
 		90C041151F137FC200CA9DA0 /* CalcService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C041131F137FC200CA9DA0 /* CalcService.swift */; };
 		C62EBAE23B49250299F88E8A /* Pods_GST_CalculatorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BD27A6DFCAE79E092DB8090 /* Pods_GST_CalculatorTests.framework */; };
 /* End PBXBuildFile section */
@@ -93,6 +94,7 @@
 		906FFF5F1F1219D50035EF3C /* Material Design.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Material Design.swift"; sourceTree = "<group>"; };
 		906FFF651F12261E0035EF3C /* ThousandSeparator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThousandSeparator.swift; sourceTree = "<group>"; };
 		906FFF671F1228160035EF3C /* PercentageTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PercentageTextField.swift; sourceTree = "<group>"; };
+		90A4675D1F1D3F68002A47B3 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
 		90C041131F137FC200CA9DA0 /* CalcService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalcService.swift; sourceTree = "<group>"; };
 		AF05AD5E82408A18E0A4B3AB /* Pods-GST CalculatorUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GST CalculatorUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GST CalculatorUITests/Pods-GST CalculatorUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		BBBFA21D7B6D14E03140F3BD /* Pods-GST CalculatorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GST CalculatorTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GST CalculatorTests/Pods-GST CalculatorTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90A4675E1F1D3F68002A47B3 /* GoogleMobileAds.framework in Frameworks */,
 				5AD89058B635F7E4F138F6FF /* Pods_GST_Calculator.framework in Frameworks */,
 				906CFC2E1F15734700C971B2 /* StoreKit.framework in Frameworks */,
 			);
@@ -142,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				906FFF271F120F190035EF3C /* GST Calculator */,
+				90A4675D1F1D3F68002A47B3 /* GoogleMobileAds.framework */,
 				906FFF3C1F120F190035EF3C /* GST CalculatorTests */,
 				906FFF471F120F1A0035EF3C /* GST CalculatorUITests */,
 				906FFF261F120F190035EF3C /* Products */,
@@ -757,6 +761,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = PTRW36GG78;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "GST Calculator/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.andriiHalabuda.GST-Calculator";
@@ -774,6 +782,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = PTRW36GG78;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "GST Calculator/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.andriiHalabuda.GST-Calculator";

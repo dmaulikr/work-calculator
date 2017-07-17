@@ -11,6 +11,9 @@ import StoreKit
 
 class SettingsVC: UIViewController, SKProductsRequestDelegate, SKPaymentTransactionObserver {
     
+    @IBOutlet weak var payButton: CustomButton!
+    
+    
     let AD_FREE_ID = "com.andriiHalabuda.GSTCalculator.ad"
     var products = [SKProduct]()
     var productID = ""
@@ -21,11 +24,17 @@ class SettingsVC: UIViewController, SKProductsRequestDelegate, SKPaymentTransact
         
         print("Purchased:", adFreePurchaseMade)
         
-        if adFreePurchaseMade {
-            // Close Ad
-        } else {
-            // Show Ad
-        }
+        adFreePurchaseMade = false
+        
+        changeButton()
+//        if adFreePurchaseMade {
+//            // Close Ad
+//            payButton.setTitle("Purchased", for: .normal)
+//            payButton.isEnabled = false
+//            payButton.layer.backgroundColor = UIColor(red: 99/255, green: 92/255, blue: 103/255, alpha: 1.0).cgColor
+//        } else {
+//            //Show Ad
+//        }
         
         requestProducts()
     }
@@ -122,6 +131,7 @@ class SettingsVC: UIViewController, SKProductsRequestDelegate, SKPaymentTransact
             
             adFreePurchaseMade = true
             UserDefaults.standard.set(adFreePurchaseMade, forKey: "adFreePurchaseMade")
+            changeButton()
             
             // Action after purchased
             showAlertWithTitle("GST Calculator", message: "You've successfully enabled Ad Free version!")
@@ -139,6 +149,17 @@ class SettingsVC: UIViewController, SKProductsRequestDelegate, SKPaymentTransact
         DispatchQueue.main.async { () -> Void in
             
             self.present(alertVC, animated: true, completion: nil)
+        }
+    }
+    
+    func changeButton() {
+        if adFreePurchaseMade {
+            // Close Ad
+            payButton.setTitle("Purchased", for: .normal)
+            payButton.isEnabled = false
+            payButton.layer.backgroundColor = UIColor(red: 99/255, green: 92/255, blue: 103/255, alpha: 1.0).cgColor
+        } else {
+            //Show Ad
         }
     }
 }

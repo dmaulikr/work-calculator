@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
-class BaseVC: UIViewController, UITextFieldDelegate {
+class BaseVC: UIViewController, UITextFieldDelegate, GADBannerViewDelegate {
     
     @IBOutlet weak var priceExcludingTax: UITextField!
     @IBOutlet weak var taxAmount: UITextField!
@@ -23,6 +24,10 @@ class BaseVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var keyboard: UIStackView!
     @IBOutlet weak var doneButton: CustomButton!
     @IBOutlet weak var tapToChangeLbl: UILabel!
+    @IBOutlet weak var banner: GADBannerView!
+    
+    let adUnit = "---" //<-- add ad unit !!!
+    let deviceId = "7bec43178b0dc3ccca0a19a8407c1016"
     
     // Basic variables
     var rawPrice = 0.0
@@ -49,10 +54,13 @@ class BaseVC: UIViewController, UITextFieldDelegate {
         
         print("Purchased:", adFreePurchaseMade)
         
+        banner.rootViewController = self
+        banner.delegate = self
+        
         if adFreePurchaseMade {
             // Close Ad
         } else {
-            // Show Ad
+            loadAd(adUnitID: adUnit)
         }
         
         let left = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(BaseVC.swipeAction))
@@ -291,6 +299,14 @@ class BaseVC: UIViewController, UITextFieldDelegate {
     
     func swipeAction() {
         performSegue(withIdentifier: "goSettings", sender: nil)
+    }
+    
+    func loadAd(adUnitID: String) {
+        let request = GADRequest()
+        request.testDevices = [kGADSimulatorID, deviceId]
+        
+        banner.adUnitID = adUnitID
+        banner.load(request)
     }
     
     //******************************
