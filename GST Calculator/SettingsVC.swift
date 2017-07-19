@@ -21,7 +21,6 @@ class SettingsVC: UIViewController, SKProductsRequestDelegate, SKPaymentTransact
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        adFreePurchaseMade = false
         print("Purchased:", adFreePurchaseMade)
         
         changeButton()
@@ -48,8 +47,6 @@ class SettingsVC: UIViewController, SKProductsRequestDelegate, SKPaymentTransact
     @IBAction func restoreBtnTapped(_ sender: Any) {
         SKPaymentQueue.default().add(self)
         SKPaymentQueue.default().restoreCompletedTransactions()
-        
-        print("Tap")
     }
     
     // Creating payment queue
@@ -94,9 +91,10 @@ class SettingsVC: UIViewController, SKProductsRequestDelegate, SKPaymentTransact
         UIApplication.shared.open(appUrl!, options: [:], completionHandler: nil)
     }
     
-    // MARK: - MAKE PURCHASE OF A PRODUCT
+    // Check if purchases are available
     func canMakePurchases() -> Bool { return SKPaymentQueue.canMakePayments() }
     
+    // Make a purchase
     func purchaseProduct(product: SKProduct) {
         if self.canMakePurchases() {
             let payment = SKPayment(product: product)
@@ -119,7 +117,6 @@ class SettingsVC: UIViewController, SKProductsRequestDelegate, SKPaymentTransact
             UserDefaults.standard.set(adFreePurchaseMade, forKey: "adFreePurchaseMade")
             changeButton()
             
-            // Action after purchased
             showAlertWithTitle("GST Calculator", message: "You've successfully enabled Ad Free version!")
         }
     }
@@ -133,7 +130,7 @@ class SettingsVC: UIViewController, SKProductsRequestDelegate, SKPaymentTransact
         showAlertWithTitle("GST Calculator", message: "You've successfully restored your purchase!")
     }
 
-    // Alert
+    // Alert Controller
     func showAlertWithTitle(_ title:String, message: String) {
         
         let alertVC = UIAlertController(title: title, message: message, preferredStyle: .alert)
