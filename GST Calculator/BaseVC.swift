@@ -26,8 +26,9 @@ class BaseVC: UIViewController, UITextFieldDelegate, GADBannerViewDelegate {
     @IBOutlet weak var tapToChangeLbl: UILabel!
     @IBOutlet weak var banner: GADBannerView!
     
-    let adUnit = "---" //<-- add ad unit !!!
-    let deviceId = "7bec43178b0dc3ccca0a19a8407c1016"
+//    let adUnit = "---" //<-- add ad unit !!!
+//    let deviceId = "7bec43178b0dc3ccca0a19a8407c1016"
+    var startAppBanner: STABannerView?
     
     // Basic variables
     var rawPrice = 0.0
@@ -60,12 +61,22 @@ class BaseVC: UIViewController, UITextFieldDelegate, GADBannerViewDelegate {
         if adFreePurchaseMade {
             // Close Ad
         } else {
-            loadAd(adUnitID: adUnit)
+            showBannerAd()
         }
         
         let left = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(BaseVC.swipeAction))
         left.edges = .left
         self.view.addGestureRecognizer(left)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+//        if adFreePurchaseMade {
+//            // Close Ad
+//        } else {
+//            showBannerAd()
+//        }
     }
     
     //Keyboard dismiss
@@ -301,12 +312,19 @@ class BaseVC: UIViewController, UITextFieldDelegate, GADBannerViewDelegate {
         performSegue(withIdentifier: "goSettings", sender: nil)
     }
     
-    func loadAd(adUnitID: String) {
-        let request = GADRequest()
-        request.testDevices = [kGADSimulatorID, deviceId]
-        
-        banner.adUnitID = adUnitID
-        banner.load(request)
+//    func loadAd(adUnitID: String) {
+//        let request = GADRequest()
+//        request.testDevices = [kGADSimulatorID, deviceId]
+//        
+//        banner.adUnitID = adUnitID
+//        banner.load(request)
+//    }
+    
+    func showBannerAd() {
+        if startAppBanner == nil {
+            startAppBanner = STABannerView(size: STA_AutoAdSize, origin: CGPoint(x: 0, y: 315), with: self.view, withDelegate: nil)
+            self.view.insertSubview(startAppBanner!, belowSubview: doneButton)
+        }
     }
     
     //******************************

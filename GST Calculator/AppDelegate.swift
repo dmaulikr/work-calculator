@@ -18,8 +18,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        SwiftlyRater.sharedInstance.appId = "1178333093" // <- Change AppID !!!!
-        SwiftlyRater.sharedInstance.usesUntilPrompt = 1 // <- Delete !!!
+        let sdk: STAStartAppSDK = STAStartAppSDK.sharedInstance()
+        sdk.appID = "206188633"
+        sdk.devID = "106960131"
+        
+        SwiftlyRater.sharedInstance.appId = "1261294723"
         return true
     }
 
