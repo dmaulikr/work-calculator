@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  GST Calculator
 //
-//  Created by Andrew Foster on 7/9/17.
+//  Created by Andrii Halabuda on 7/9/17.
 //  Copyright © 2017 Andrii Halabuda. All rights reserved.
 //
 

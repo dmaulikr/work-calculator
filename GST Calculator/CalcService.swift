@@ -2,8 +2,8 @@
 //  CalcService.swift
 //  Retro Calculator
 //
-//  Created by Andrew Foster on 5/31/17.
-//  Copyright © 2017 Foster Inc. All rights reserved.
+//  Created by Andrii Halabuda on 5/31/17.
+//  Copyright © 2017 Andrii Halabuda. All rights reserved.
 //
 
 import UIKit

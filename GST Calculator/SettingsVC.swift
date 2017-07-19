@@ -2,7 +2,7 @@
 //  SettingsVC.swift
 //  GST Calculator
 //
-//  Created by Andrew Foster on 7/11/17.
+//  Created by Andrii Halabuda on 7/11/17.
 //  Copyright © 2017 Andrii Halabuda. All rights reserved.
 //
 
@@ -13,29 +13,18 @@ class SettingsVC: UIViewController, SKProductsRequestDelegate, SKPaymentTransact
     
     @IBOutlet weak var payButton: CustomButton!
     
-    
-    let AD_FREE_ID = "com.andriiHalabuda.GSTCalculator.ad"
+    let AD_FREE_ID = "com.spacehash.GSTCalculator.ad"
     var products = [SKProduct]()
     var productID = ""
-    let appUrl = URL(string: "itms-apps://itunes.apple.com/app/id1178333093") //<- Change!!!
+    let appUrl = URL(string: "itms-apps://itunes.apple.com/app/id1261294723")
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        adFreePurchaseMade = false
         print("Purchased:", adFreePurchaseMade)
         
-        adFreePurchaseMade = false
-        
         changeButton()
-//        if adFreePurchaseMade {
-//            // Close Ad
-//            payButton.setTitle("Purchased", for: .normal)
-//            payButton.isEnabled = false
-//            payButton.layer.backgroundColor = UIColor(red: 99/255, green: 92/255, blue: 103/255, alpha: 1.0).cgColor
-//        } else {
-//            //Show Ad
-//        }
-        
         requestProducts()
     }
     
@@ -51,6 +40,7 @@ class SettingsVC: UIViewController, SKProductsRequestDelegate, SKPaymentTransact
     func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
         print("Products ready: \(response.products.count)")
         print("Products not ready: \(response.invalidProductIdentifiers.count)")
+        print("Product:", response.products[0].productIdentifier)
         self.products = response.products
     }
     
@@ -58,6 +48,8 @@ class SettingsVC: UIViewController, SKProductsRequestDelegate, SKPaymentTransact
     @IBAction func restoreBtnTapped(_ sender: Any) {
         SKPaymentQueue.default().add(self)
         SKPaymentQueue.default().restoreCompletedTransactions()
+        
+        print("Tap")
     }
     
     // Creating payment queue
@@ -77,6 +69,7 @@ class SettingsVC: UIViewController, SKProductsRequestDelegate, SKPaymentTransact
                 break
             case .restored:
                 print("Restored")
+                restoreAdFree()
                 SKPaymentQueue.default().finishTransaction(transaction)
                 break
             case .purchasing:
@@ -101,13 +94,6 @@ class SettingsVC: UIViewController, SKProductsRequestDelegate, SKPaymentTransact
         UIApplication.shared.open(appUrl!, options: [:], completionHandler: nil)
     }
     
-    func paymentQueueRestoreCompletedTransactionsFinished(_ queue: SKPaymentQueue) {
-        adFreePurchaseMade = true
-        UserDefaults.standard.set(adFreePurchaseMade, forKey: "adFreePurchaseMade")
-        
-        showAlertWithTitle("GST Calculator", message: "You've successfully restored your purchase!")
-    }
-    
     // MARK: - MAKE PURCHASE OF A PRODUCT
     func canMakePurchases() -> Bool { return SKPaymentQueue.canMakePayments() }
     
@@ -120,7 +106,7 @@ class SettingsVC: UIViewController, SKProductsRequestDelegate, SKPaymentTransact
             print("PRODUCT TO PURCHASE: \(product.productIdentifier)")
             productID = product.productIdentifier
             
-            // IAP Purchases dsabled on the Device
+            // IAP Purchases disabled on the Device
         } else {
             showAlertWithTitle("GST Calculator", message: "Purchases are disabled in your device!")
         }
@@ -138,6 +124,15 @@ class SettingsVC: UIViewController, SKProductsRequestDelegate, SKPaymentTransact
         }
     }
     
+    func restoreAdFree() {
+        
+        adFreePurchaseMade = true
+        UserDefaults.standard.set(adFreePurchaseMade, forKey: "adFreePurchaseMade")
+        changeButton()
+        
+        showAlertWithTitle("GST Calculator", message: "You've successfully restored your purchase!")
+    }
+
     // Alert
     func showAlertWithTitle(_ title:String, message: String) {
         

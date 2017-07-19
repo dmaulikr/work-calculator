@@ -576,7 +576,7 @@
                         <viewControllerLayoutGuide type="top" id="nOA-t3-vRD"/>
                         <viewControllerLayoutGuide type="bottom" id="owK-Ed-DaA"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="SCX-B9-Xbw">
+                    <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="SCX-B9-Xbw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -672,7 +672,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.93650282119999995" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="3PW-pg-5Yo" firstAttribute="top" secondItem="Z3n-uA-xey" secondAttribute="bottom" constant="15" id="BtI-BG-MQG"/>
                             <constraint firstItem="Lhb-fc-tMH" firstAttribute="trailing" secondItem="SCX-B9-Xbw" secondAttribute="trailingMargin" id="JHJ-Yh-xIH"/>
