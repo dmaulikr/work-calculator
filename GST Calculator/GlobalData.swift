@@ -9,3 +9,9 @@
 import Foundation
 
 var adFreePurchaseMade = UserDefaults.standard.bool(forKey: "adFreePurchaseMade")
+
+// Basic variables
+var rawPrice = 0.0
+var totalPrice = 0.0
+var taxPercent = 1.0
+var taxableAmount = 0.0

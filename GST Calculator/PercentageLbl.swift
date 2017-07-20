@@ -1,5 +1,5 @@
 //
-//  RoundedLabel.swift
+//  PercentageLbl.swift
 //  GST Calculator
 //
 //  Created by Andrew Foster on 7/20/17.
@@ -9,7 +9,7 @@
 import UIKit
 
 @IBDesignable
-class RoundedLabel: UILabel {
+class PercentageLbl: UILabel {
 
     @IBInspectable var cornerRadius: CGFloat = 0.0 {
         didSet {
@@ -39,6 +39,22 @@ class RoundedLabel: UILabel {
         self.layer.cornerRadius = cornerRadius
         self.layer.borderWidth = borderWidth
         self.layer.borderColor = borderColor?.cgColor
+    }
+    
+    let topInset = CGFloat(0)
+    let bottomInset = CGFloat(0)
+    let leftInset = CGFloat(5)
+    let rightInset = CGFloat(5)
+    
+    override func drawText(in rect: CGRect) {
+        super.drawText(in: UIEdgeInsetsInsetRect(rect, UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)))
+    }
+    
+    override public var intrinsicContentSize: CGSize {
+        var intrinsicSuperViewContentSize = super.intrinsicContentSize
+        intrinsicSuperViewContentSize.height += topInset + bottomInset
+        intrinsicSuperViewContentSize.width += leftInset + rightInset
+        return intrinsicSuperViewContentSize
     }
 
 }

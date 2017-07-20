@@ -41,6 +41,7 @@
 		90A4675E1F1D3F68002A47B3 /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90A4675D1F1D3F68002A47B3 /* GoogleMobileAds.framework */; };
 		90C041151F137FC200CA9DA0 /* CalcService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C041131F137FC200CA9DA0 /* CalcService.swift */; };
 		90CC671E1F20B0BC00C14681 /* RoundedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CC671D1F20B0BC00C14681 /* RoundedLabel.swift */; };
+		90CC67201F20C6FB00C14681 /* PercentageLbl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CC671F1F20C6FB00C14681 /* PercentageLbl.swift */; };
 		C62EBAE23B49250299F88E8A /* Pods_GST_CalculatorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BD27A6DFCAE79E092DB8090 /* Pods_GST_CalculatorTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -119,6 +120,7 @@
 		90A4675D1F1D3F68002A47B3 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
 		90C041131F137FC200CA9DA0 /* CalcService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalcService.swift; sourceTree = "<group>"; };
 		90CC671D1F20B0BC00C14681 /* RoundedLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedLabel.swift; sourceTree = "<group>"; };
+		90CC671F1F20C6FB00C14681 /* PercentageLbl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PercentageLbl.swift; sourceTree = "<group>"; };
 		AF05AD5E82408A18E0A4B3AB /* Pods-GST CalculatorUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GST CalculatorUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GST CalculatorUITests/Pods-GST CalculatorUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		BBBFA21D7B6D14E03140F3BD /* Pods-GST CalculatorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GST CalculatorTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GST CalculatorTests/Pods-GST CalculatorTests.release.xcconfig"; sourceTree = "<group>"; };
 		E17E6D7DC521E0E4A1944E80 /* Pods_GST_Calculator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GST_Calculator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -278,6 +280,7 @@
 				906CFBD51F14F25700C971B2 /* CustomLabel.swift */,
 				90CC671D1F20B0BC00C14681 /* RoundedLabel.swift */,
 				906CFBD71F14F46F00C971B2 /* CustomView.swift */,
+				90CC671F1F20C6FB00C14681 /* PercentageLbl.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -648,6 +651,7 @@
 				900CFB121F1AB126000449D7 /* GlobalData.swift in Sources */,
 				906FFF621F1219D50035EF3C /* CustomTextField.swift in Sources */,
 				906FFF661F12261E0035EF3C /* ThousandSeparator.swift in Sources */,
+				90CC67201F20C6FB00C14681 /* PercentageLbl.swift in Sources */,
 				906CFBD81F14F46F00C971B2 /* CustomView.swift in Sources */,
 				90C041151F137FC200CA9DA0 /* CalcService.swift in Sources */,
 				906FFF641F1219D50035EF3C /* Material Design.swift in Sources */,

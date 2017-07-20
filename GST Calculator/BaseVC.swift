@@ -40,11 +40,11 @@ class BaseVC: UIViewController, UITextFieldDelegate {
 //    let deviceId = "7bec43178b0dc3ccca0a19a8407c1016"
     var startAppBanner: STABannerView?
     
-    // Basic variables
-    var rawPrice = 0.0
-    var totalPrice = 0.0
-    var taxPercent = 1.0
-    var taxableAmount = 0.0
+//    // Basic variables
+//    var rawPrice = 0.0
+//    var totalPrice = 0.0
+//    var taxPercent = 1.0
+//    var taxableAmount = 0.0
     
     // Variables for calculations
     var runningNumber = "0"
@@ -60,8 +60,12 @@ class BaseVC: UIViewController, UITextFieldDelegate {
 //        taxAmount.delegate = self
 //        taxPercentage.delegate = self
 //        total.delegate = self
-        
 //        addObserverForKeyboard()
+        
+        taxPercentageLbl.text = "\(taxPercent)%"
+        priceExcludingTaxLbl.text = rawPrice.round(to: 2).formattedWithSeparator
+        taxAmountLbl.text = taxableAmount.round(to: 2).formattedWithSeparator
+        totalLbl.text = totalPrice.round(to: 2).formattedWithSeparator
         
         print("Purchased:", adFreePurchaseMade)
         
@@ -71,8 +75,8 @@ class BaseVC: UIViewController, UITextFieldDelegate {
             showBannerAd()
         }
         
-        let left = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(BaseVC.swipeAction))
-        left.edges = .left
+//        let left = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(BaseVC.swipeAction))
+//        left.edges = .left
 //        self.view.addGestureRecognizer(left)
     }
     
@@ -279,45 +283,45 @@ class BaseVC: UIViewController, UITextFieldDelegate {
     }
     
     //Keyboard frame sizing
-    func keyboardWillShow(notification: NSNotification) {
+//    func keyboardWillShow(notification: NSNotification) {
 //        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
 //            if self.view.frame.origin.y == 0 {
 //                self.view.frame.origin.y -= keyboardSize.height
 //            }
 //        }
-        keyboard.isHidden = true
-        doneButton.isHidden = false
-    }
-    
-    func keyboardWillHide(notification: NSNotification) {
+//        keyboard.isHidden = true
+//        doneButton.isHidden = false
+//    }
+//    
+//    func keyboardWillHide(notification: NSNotification) {
 //        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
 //            if self.view.frame.origin.y != 0 {
 //                self.view.frame.origin.y += keyboardSize.height
 //            }
 //        }
-        keyboard.isHidden = false
-        doneButton.isHidden = true
-    }
+//        keyboard.isHidden = false
+//        doneButton.isHidden = true
+//    }
     
-    func addObserverForKeyboard() {
-        NotificationCenter.default.addObserver(self, selector: #selector(BaseVC.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(BaseVC.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
-    }
+//    func addObserverForKeyboard() {
+//        NotificationCenter.default.addObserver(self, selector: #selector(BaseVC.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(BaseVC.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+//    }
     
-    func showAlertWithTitle(_ title:String, message:String) {
-        
-        let alertVC = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-        alertVC.addAction(okAction)
-        
-        DispatchQueue.main.async { () -> Void in
-            self.present(alertVC, animated: true, completion: nil)
-        }
-    }
+//    func showAlertWithTitle(_ title:String, message:String) {
+//        
+//        let alertVC = UIAlertController(title: title, message: message, preferredStyle: .alert)
+//        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+//        alertVC.addAction(okAction)
+//        
+//        DispatchQueue.main.async { () -> Void in
+//            self.present(alertVC, animated: true, completion: nil)
+//        }
+//    }
     
-    func swipeAction() {
-        performSegue(withIdentifier: "goSettings", sender: nil)
-    }
+//    func swipeAction() {
+//        performSegue(withIdentifier: "goSettings", sender: nil)
+//    }
     
     func showBannerAd() {
         if startAppBanner == nil {
@@ -480,7 +484,7 @@ class BaseVC: UIViewController, UITextFieldDelegate {
         if taxPercentageLbl.text == nil || taxPercentageLbl.text == "" {
             print("Default tax")
             taxPercent = 1.0
-            taxPercentageLbl.text = "1.0%"
+            taxPercentageLbl.text = "\(taxPercent)%"
             
             if priceExcludingTaxLbl.text == nil || priceExcludingTaxLbl.text == "" {
                 print("No raw value")
@@ -651,6 +655,25 @@ class BaseVC: UIViewController, UITextFieldDelegate {
         rawPrice = 0.0
         taxableAmount = 0.0
         totalPrice = 0.0
+        
+        priceExcludingTaxLbl.layer.borderWidth = 0.0
+        taxAmountLbl.layer.borderWidth = 0.0
+        totalLbl.layer.borderWidth = 0.0
+        
+        priceExcludingTaxLbl.isUserInteractionEnabled = true
+        taxAmountLbl.isUserInteractionEnabled = true
+        totalLbl.isUserInteractionEnabled = true
+        taxPercentageLbl.isUserInteractionEnabled = true
+        
+        priceExculudingTaxIsEditing = false
+        taxAmountIsEditing = false
+        totalIsEditing = false
+        
+        if taxPercentageIsEditing {
+            taxPercentageIsEditing = false
+            
+            taxPercentageLblEdited()
+        }
     }
     
     @IBAction func delTapped(_ sender: AnyObject) {
@@ -724,8 +747,6 @@ class BaseVC: UIViewController, UITextFieldDelegate {
                 } else if totalIsEditing {
                     totalLbl.text = result
                 }
-                
-//                priceExcludingTaxLblEdited()
                 
             }
             
