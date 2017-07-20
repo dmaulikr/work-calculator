@@ -7,9 +7,8 @@
 //
 
 import UIKit
-import GoogleMobileAds
 
-class BaseVC: UIViewController, UITextFieldDelegate, GADBannerViewDelegate {
+class BaseVC: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var priceExcludingTax: UITextField!
     @IBOutlet weak var taxAmount: UITextField!
@@ -24,7 +23,18 @@ class BaseVC: UIViewController, UITextFieldDelegate, GADBannerViewDelegate {
     @IBOutlet weak var keyboard: UIStackView!
     @IBOutlet weak var doneButton: CustomButton!
     @IBOutlet weak var tapToChangeLbl: UILabel!
-    @IBOutlet weak var banner: GADBannerView!
+    @IBOutlet weak var stackView: UIStackView!
+    
+    //Custom input source
+    @IBOutlet weak var priceExcludingTaxLbl: UILabel!
+    @IBOutlet weak var taxAmountLbl: UILabel!
+    @IBOutlet weak var taxPercentageLbl: UILabel!
+    @IBOutlet weak var totalLbl: UILabel!
+    
+    var priceExculudingTaxIsEditing = false
+    var taxAmountIsEditing = false
+    var taxPercentageIsEditing = false
+    var totalIsEditing = false
     
 //    let adUnit = "---" //<-- add ad unit !!!
 //    let deviceId = "7bec43178b0dc3ccca0a19a8407c1016"
@@ -46,17 +56,14 @@ class BaseVC: UIViewController, UITextFieldDelegate, GADBannerViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        priceExcludingTax.delegate = self
-        taxAmount.delegate = self
-        taxPercentage.delegate = self
-        total.delegate = self
+//        priceExcludingTax.delegate = self
+//        taxAmount.delegate = self
+//        taxPercentage.delegate = self
+//        total.delegate = self
         
-        addObserverForKeyboard()
+//        addObserverForKeyboard()
         
         print("Purchased:", adFreePurchaseMade)
-        
-        banner.rootViewController = self
-        banner.delegate = self
         
         if adFreePurchaseMade {
             // Close Ad
@@ -66,7 +73,7 @@ class BaseVC: UIViewController, UITextFieldDelegate, GADBannerViewDelegate {
         
         let left = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(BaseVC.swipeAction))
         left.edges = .left
-        self.view.addGestureRecognizer(left)
+//        self.view.addGestureRecognizer(left)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -80,32 +87,32 @@ class BaseVC: UIViewController, UITextFieldDelegate, GADBannerViewDelegate {
     }
     
     //Keyboard dismiss
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
-        doneButton.isHidden = true
-        
-        priceExcludingTax.layer.borderWidth = 0.0
-        taxAmount.layer.borderWidth = 0.0
-        total.layer.borderWidth = 0.0
-    }
+//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        self.view.endEditing(true)
+//        doneButton.isHidden = true
+//        
+//        priceExcludingTax.layer.borderWidth = 0.0
+//        taxAmount.layer.borderWidth = 0.0
+//        total.layer.borderWidth = 0.0
+//    }
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        priceExcludingTax.resignFirstResponder()
-        taxAmount.resignFirstResponder()
-        taxPercentage.resignFirstResponder()
-        total.resignFirstResponder()
-        return true
-    }
+//    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+//        priceExcludingTax.resignFirstResponder()
+//        taxAmount.resignFirstResponder()
+//        taxPercentage.resignFirstResponder()
+//        total.resignFirstResponder()
+//        return true
+//    }
     
-    @IBAction func doneTapped(_ sender: Any) {
-        
-        self.view.endEditing(true)
-        doneButton.isHidden = true
-        
-        priceExcludingTax.layer.borderWidth = 0.0
-        taxAmount.layer.borderWidth = 0.0
-        total.layer.borderWidth = 0.0
-    }
+//    @IBAction func doneTapped(_ sender: Any) {
+//        
+//        self.view.endEditing(true)
+//        doneButton.isHidden = true
+//        
+//        priceExcludingTax.layer.borderWidth = 0.0
+//        taxAmount.layer.borderWidth = 0.0
+//        total.layer.borderWidth = 0.0
+//    }
     
     
     @IBAction func priceExcludingTaxEdited(_ sender: Any) {
@@ -312,20 +319,217 @@ class BaseVC: UIViewController, UITextFieldDelegate, GADBannerViewDelegate {
         performSegue(withIdentifier: "goSettings", sender: nil)
     }
     
-//    func loadAd(adUnitID: String) {
-//        let request = GADRequest()
-//        request.testDevices = [kGADSimulatorID, deviceId]
-//        
-//        banner.adUnitID = adUnitID
-//        banner.load(request)
-//    }
-    
     func showBannerAd() {
         if startAppBanner == nil {
             startAppBanner = STABannerView(size: STA_AutoAdSize, origin: CGPoint(x: 0, y: 315), with: self.view, withDelegate: nil)
-            self.view.insertSubview(startAppBanner!, belowSubview: doneButton)
+            self.view.insertSubview(startAppBanner!, belowSubview: stackView)
         }
     }
+    
+    
+    //***********************************************************//
+    //***********************************************************//
+    
+    /*                 New functions with UILabel               */
+    
+    //***********************************************************//
+    //***********************************************************//
+    //***********************************************************//
+    
+    
+    @IBAction func priceExcludingTaxLblStartEditing() {
+        priceExculudingTaxIsEditing = true
+        priceExcludingTaxLbl.isUserInteractionEnabled = false
+        taxAmountLbl.isUserInteractionEnabled = false
+        totalLbl.isUserInteractionEnabled = false
+        taxPercentageLbl.isUserInteractionEnabled = false
+        
+        runningNumber = "0"
+        leftValStr = ""
+        rightValStr = ""
+        output.text = ""
+        operatorLbl.text = ""
+        leftOperand.text = ""
+        result = ""
+        currentOperation = CalcService.Operation.empty
+        
+        priceExcludingTaxLbl.layer.borderWidth = 1.0
+        taxAmountLbl.layer.borderWidth = 0.0
+        totalLbl.layer.borderWidth = 0.0
+        priceExcludingTaxLbl.layer.borderColor = UIColor.orange.cgColor
+        
+        print("Tap")
+    }
+    
+    @IBAction func taxAmountLblStartEditing() {
+        taxAmountIsEditing = true
+        priceExcludingTaxLbl.isUserInteractionEnabled = false
+        taxAmountLbl.isUserInteractionEnabled = false
+        totalLbl.isUserInteractionEnabled = false
+        taxPercentageLbl.isUserInteractionEnabled = false
+        
+        runningNumber = "0"
+        leftValStr = ""
+        rightValStr = ""
+        output.text = ""
+        operatorLbl.text = ""
+        leftOperand.text = ""
+        result = ""
+        currentOperation = CalcService.Operation.empty
+        
+        priceExcludingTaxLbl.layer.borderWidth = 0.0
+        taxAmountLbl.layer.borderWidth = 1.0
+        totalLbl.layer.borderWidth = 0.0
+        taxAmountLbl.layer.borderColor = UIColor.orange.cgColor
+        
+        print("Tap")
+    }
+    
+    @IBAction func totalLblStartEditing() {
+        totalIsEditing = true
+        priceExcludingTaxLbl.isUserInteractionEnabled = false
+        taxAmountLbl.isUserInteractionEnabled = false
+        totalLbl.isUserInteractionEnabled = false
+        taxPercentageLbl.isUserInteractionEnabled = false
+        
+        runningNumber = "0"
+        leftValStr = ""
+        rightValStr = ""
+        output.text = ""
+        operatorLbl.text = ""
+        leftOperand.text = ""
+        result = ""
+        currentOperation = CalcService.Operation.empty
+        
+        priceExcludingTaxLbl.layer.borderWidth = 0.0
+        taxAmountLbl.layer.borderWidth = 0.0
+        totalLbl.layer.borderWidth = 1.0
+        totalLbl.layer.borderColor = UIColor.orange.cgColor
+        
+        print("Tap")
+    }
+    
+    @IBAction func taxPercentageLblStartEditing() {
+        taxPercentageIsEditing = true
+        taxPercentageLbl.text = ""
+        priceExcludingTaxLbl.isUserInteractionEnabled = false
+        taxAmountLbl.isUserInteractionEnabled = false
+        totalLbl.isUserInteractionEnabled = false
+        taxPercentageLbl.isUserInteractionEnabled = false
+        
+        priceExcludingTaxLbl.layer.borderWidth = 0.0
+        taxAmountLbl.layer.borderWidth = 0.0
+        totalLbl.layer.borderWidth = 0.0
+        
+        tapToChangeLbl.layer.opacity = 0.25
+        
+        print("Tap")
+    }
+    
+    func priceExcludingTaxLblEdited() {
+        
+        if priceExcludingTaxLbl.text == nil || priceExcludingTaxLbl.text == "" {
+            print("No raw price")
+            rawPrice = 0.0
+            taxAmountLbl.text = ""
+            totalLbl.text = ""
+            
+            taxableAmount = 0.0
+            totalPrice = 0.0
+        } else {
+            
+            if let value = Double(priceExcludingTaxLbl.text!) {
+                rawPrice = value
+                
+                taxableAmount = rawPrice * (taxPercent * 0.01)
+                totalPrice = rawPrice + taxableAmount
+                
+                taxAmountLbl.text = taxableAmount.round(to: 2).formattedWithSeparator
+                totalLbl.text = totalPrice.round(to: 2).formattedWithSeparator
+                priceExcludingTaxLbl.text = rawPrice.round(to: 2).formattedWithSeparator
+            }
+        }
+    }
+    
+    func taxAmountLblEdited() {
+        if taxAmountLbl.text == nil || taxAmountLbl.text == "" {
+            print("No tax amount")
+            taxableAmount = 0.0
+            priceExcludingTaxLbl.text = ""
+            totalLbl.text = ""
+            
+            rawPrice = 0.0
+            totalPrice = 0.0
+        } else {
+            
+            if let value = Double(taxAmountLbl.text!) {
+                taxableAmount = value
+                
+                rawPrice = taxableAmount * 100 / taxPercent
+                totalPrice = rawPrice + taxableAmount
+                
+                taxAmountLbl.text = taxableAmount.round(to: 2).formattedWithSeparator
+                totalLbl.text = totalPrice.round(to: 2).formattedWithSeparator
+                priceExcludingTaxLbl.text = rawPrice.round(to: 2).formattedWithSeparator
+            }
+        }
+    }
+    
+    func taxPercentageLblEdited() {
+        
+        if taxPercentageLbl.text == nil || taxPercentageLbl.text == "" {
+            print("Default tax")
+            taxPercent = 1.0
+            taxPercentageLbl.text = "1.0%"
+            
+            if priceExcludingTaxLbl.text == nil || priceExcludingTaxLbl.text == "" {
+                print("No raw value")
+                
+            } else {
+                taxableAmount = rawPrice * (taxPercent * 0.01)
+                totalPrice = rawPrice + taxableAmount
+                
+                taxAmountLbl.text = taxableAmount.round(to: 2).formattedWithSeparator
+                totalLbl.text = totalPrice.round(to: 2).formattedWithSeparator
+            }
+            
+        } else {
+            taxPercent = Double(taxPercentageLbl.text!)!
+            taxableAmount = rawPrice * (taxPercent * 0.01)
+            totalPrice = rawPrice + taxableAmount
+            
+            taxAmountLbl.text = taxableAmount.round(to: 2).formattedWithSeparator
+            totalLbl.text = totalPrice.round(to: 2).formattedWithSeparator
+            taxPercentageLbl.text = "\(taxPercent.round(to: 2))%"
+        }
+        
+        tapToChangeLbl.layer.opacity = 1.0
+    }
+    
+    func totalLblEdited() {
+        if totalLbl.text == nil || totalLbl.text == "" {
+            print("No Total")
+            totalPrice = 0.0
+            priceExcludingTaxLbl.text = ""
+            taxAmountLbl.text = ""
+            
+            rawPrice = 0.0
+            taxableAmount = 0.0
+        } else {
+            
+            if let value = Double(totalLbl.text!) {
+                totalPrice = value
+                
+                rawPrice = (totalPrice * 100) / (taxPercent + 100)
+                taxableAmount = rawPrice * (taxPercent * 0.01)
+                
+                taxAmountLbl.text = taxableAmount.round(to: 2).formattedWithSeparator
+                totalLbl.text = totalPrice.round(to: 2).formattedWithSeparator
+                priceExcludingTaxLbl.text = rawPrice.round(to: 2).formattedWithSeparator
+            }
+        }
+    }
+    
     
     //******************************
     //***Calculator functionality***
@@ -339,13 +543,39 @@ class BaseVC: UIViewController, UITextFieldDelegate, GADBannerViewDelegate {
             runningNumber = ""
             runningNumber += "\(btn.tag)"
         }
-        output.text = runningNumber
+        
+        if !taxPercentageIsEditing {
+            output.text = runningNumber
+        }
+        
+        if priceExculudingTaxIsEditing {
+            priceExcludingTaxLbl.text = runningNumber
+        } else if taxAmountIsEditing {
+            taxAmountLbl.text = runningNumber
+        } else if totalIsEditing {
+            totalLbl.text = runningNumber
+        } else if taxPercentageIsEditing {
+            taxPercentageLbl.text = runningNumber
+        }
     }
     
     @IBAction func dotTapped(_ btn: UIButton!) {
         
         runningNumber += "."
-        output.text = runningNumber
+        
+        if !taxPercentageIsEditing {
+            output.text = runningNumber
+        }
+        
+        if priceExculudingTaxIsEditing {
+            priceExcludingTaxLbl.text = runningNumber
+        } else if taxAmountIsEditing {
+            taxAmountLbl.text = runningNumber
+        } else if totalIsEditing {
+            totalLbl.text = runningNumber
+        } else if taxPercentageIsEditing {
+            taxPercentageLbl.text = runningNumber
+        }
     }
     
     @IBAction func onDividePressed(_ sender: AnyObject) {
@@ -374,9 +604,33 @@ class BaseVC: UIViewController, UITextFieldDelegate, GADBannerViewDelegate {
     
     @IBAction func onEqualPressed(_ sender: AnyObject) {
         processOperation(currentOperation)
-//        if runningNumber == "" {
-//            runningNumber = "0"
-//        }
+        
+        priceExcludingTaxLbl.layer.borderWidth = 0.0
+        taxAmountLbl.layer.borderWidth = 0.0
+        totalLbl.layer.borderWidth = 0.0
+        
+        priceExcludingTaxLbl.isUserInteractionEnabled = true
+        taxAmountLbl.isUserInteractionEnabled = true
+        totalLbl.isUserInteractionEnabled = true
+        taxPercentageLbl.isUserInteractionEnabled = true
+        
+        if priceExculudingTaxIsEditing {
+            priceExculudingTaxIsEditing = false
+            
+            priceExcludingTaxLblEdited()
+        } else if taxAmountIsEditing {
+            taxAmountIsEditing = false
+            
+            taxAmountLblEdited()
+        } else if totalIsEditing {
+            totalIsEditing = false
+            
+            totalLblEdited()
+        } else if taxPercentageIsEditing {
+            taxPercentageIsEditing = false
+            
+            taxPercentageLblEdited()
+        }
     }
     
     @IBAction func onClearPressed(_ sender: AnyObject) {
@@ -390,9 +644,9 @@ class BaseVC: UIViewController, UITextFieldDelegate, GADBannerViewDelegate {
         leftOperand.text = leftValStr
         operatorLbl.text = currentOperation.rawValue
         
-        priceExcludingTax.text = ""
-        taxAmount.text = ""
-        total.text = ""
+        priceExcludingTaxLbl.text = ""
+        taxAmountLbl.text = ""
+        totalLbl.text = ""
         
         rawPrice = 0.0
         taxableAmount = 0.0
@@ -462,8 +716,16 @@ class BaseVC: UIViewController, UITextFieldDelegate, GADBannerViewDelegate {
                 
                 leftValStr = result
                 output.text = rightValStr
-                priceExcludingTax.text = result
-                priceExcludingTaxEdited((Any).self)
+                
+                if priceExculudingTaxIsEditing {
+                    priceExcludingTaxLbl.text = result
+                } else if taxAmountIsEditing {
+                    taxAmountLbl.text = result
+                } else if totalIsEditing {
+                    totalLbl.text = result
+                }
+                
+//                priceExcludingTaxLblEdited()
                 
             }
             
@@ -480,5 +742,12 @@ class BaseVC: UIViewController, UITextFieldDelegate, GADBannerViewDelegate {
         }
     }
     
+    //    func loadAd(adUnitID: String) {
+    //        let request = GADRequest()
+    //        request.testDevices = [kGADSimulatorID, deviceId]
+    //
+    //        banner.adUnitID = adUnitID
+    //        banner.load(request)
+    //    }
 }
 
