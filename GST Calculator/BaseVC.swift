@@ -24,6 +24,10 @@ class BaseVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var doneButton: CustomButton!
     @IBOutlet weak var tapToChangeLbl: UILabel!
     @IBOutlet weak var stackView: UIStackView!
+    @IBOutlet weak var addBtn: UIButton!
+    @IBOutlet weak var subtractBtn: UIButton!
+    @IBOutlet weak var multiplyBtn: UIButton!
+    @IBOutlet weak var divideBtn: UIButton!
     
     //Custom input source
     @IBOutlet weak var priceExcludingTaxLbl: UILabel!
@@ -83,11 +87,7 @@ class BaseVC: UIViewController, UITextFieldDelegate {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-//        if adFreePurchaseMade {
-//            // Close Ad
-//        } else {
-//            showBannerAd()
-//        }
+//        priceExcludingTaxLblStartEditing()
     }
     
     //Keyboard dismiss
@@ -342,11 +342,32 @@ class BaseVC: UIViewController, UITextFieldDelegate {
     
     
     @IBAction func priceExcludingTaxLblStartEditing() {
+        
+        if priceExculudingTaxIsEditing {
+            priceExculudingTaxIsEditing = false
+            
+            priceExcludingTaxLblEdited()
+        } else if taxAmountIsEditing {
+            taxAmountIsEditing = false
+            
+            taxAmountLblEdited()
+        } else if totalIsEditing {
+            totalIsEditing = false
+            
+            totalLblEdited()
+        } else if taxPercentageIsEditing {
+            taxPercentageIsEditing = false
+            
+            taxPercentageLblEdited()
+        }
+        
         priceExculudingTaxIsEditing = true
         priceExcludingTaxLbl.isUserInteractionEnabled = false
-        taxAmountLbl.isUserInteractionEnabled = false
-        totalLbl.isUserInteractionEnabled = false
-        taxPercentageLbl.isUserInteractionEnabled = false
+        priceExcludingTaxLbl.text = ""
+//        priceExcludingTaxLbl.isUserInteractionEnabled = false
+//        taxAmountLbl.isUserInteractionEnabled = false
+//        totalLbl.isUserInteractionEnabled = false
+//        taxPercentageLbl.isUserInteractionEnabled = false
         
         runningNumber = "0"
         leftValStr = ""
@@ -366,11 +387,32 @@ class BaseVC: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func taxAmountLblStartEditing() {
+        
+        if priceExculudingTaxIsEditing {
+            priceExculudingTaxIsEditing = false
+            
+            priceExcludingTaxLblEdited()
+        } else if taxAmountIsEditing {
+            taxAmountIsEditing = false
+            
+            taxAmountLblEdited()
+        } else if totalIsEditing {
+            totalIsEditing = false
+            
+            totalLblEdited()
+        } else if taxPercentageIsEditing {
+            taxPercentageIsEditing = false
+            
+            taxPercentageLblEdited()
+        }
+        
         taxAmountIsEditing = true
-        priceExcludingTaxLbl.isUserInteractionEnabled = false
         taxAmountLbl.isUserInteractionEnabled = false
-        totalLbl.isUserInteractionEnabled = false
-        taxPercentageLbl.isUserInteractionEnabled = false
+        taxAmountLbl.text = ""
+//        priceExcludingTaxLbl.isUserInteractionEnabled = false
+//        taxAmountLbl.isUserInteractionEnabled = false
+//        totalLbl.isUserInteractionEnabled = false
+//        taxPercentageLbl.isUserInteractionEnabled = false
         
         runningNumber = "0"
         leftValStr = ""
@@ -390,11 +432,32 @@ class BaseVC: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func totalLblStartEditing() {
+        
+        if priceExculudingTaxIsEditing {
+            priceExculudingTaxIsEditing = false
+            
+            priceExcludingTaxLblEdited()
+        } else if taxAmountIsEditing {
+            taxAmountIsEditing = false
+            
+            taxAmountLblEdited()
+        } else if totalIsEditing {
+            totalIsEditing = false
+            
+            totalLblEdited()
+        } else if taxPercentageIsEditing {
+            taxPercentageIsEditing = false
+            
+            taxPercentageLblEdited()
+        }
+        
         totalIsEditing = true
-        priceExcludingTaxLbl.isUserInteractionEnabled = false
-        taxAmountLbl.isUserInteractionEnabled = false
         totalLbl.isUserInteractionEnabled = false
-        taxPercentageLbl.isUserInteractionEnabled = false
+        totalLbl.text = ""
+//        priceExcludingTaxLbl.isUserInteractionEnabled = false
+//        taxAmountLbl.isUserInteractionEnabled = false
+//        totalLbl.isUserInteractionEnabled = false
+//        taxPercentageLbl.isUserInteractionEnabled = false
         
         runningNumber = "0"
         leftValStr = ""
@@ -414,18 +477,48 @@ class BaseVC: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func taxPercentageLblStartEditing() {
+        
+        if priceExculudingTaxIsEditing {
+            priceExculudingTaxIsEditing = false
+            
+            priceExcludingTaxLblEdited()
+        } else if taxAmountIsEditing {
+            taxAmountIsEditing = false
+            
+            taxAmountLblEdited()
+        } else if totalIsEditing {
+            totalIsEditing = false
+            
+            totalLblEdited()
+        } else if taxPercentageIsEditing {
+            taxPercentageIsEditing = false
+            
+            taxPercentageLblEdited()
+        }
+        
         taxPercentageIsEditing = true
-        taxPercentageLbl.text = ""
-        priceExcludingTaxLbl.isUserInteractionEnabled = false
-        taxAmountLbl.isUserInteractionEnabled = false
-        totalLbl.isUserInteractionEnabled = false
         taxPercentageLbl.isUserInteractionEnabled = false
+        taxPercentageLbl.text = ""
+//        priceExcludingTaxLbl.isUserInteractionEnabled = false
+//        taxAmountLbl.isUserInteractionEnabled = false
+//        totalLbl.isUserInteractionEnabled = false
+//        taxPercentageLbl.isUserInteractionEnabled = false
         
         priceExcludingTaxLbl.layer.borderWidth = 0.0
         taxAmountLbl.layer.borderWidth = 0.0
         totalLbl.layer.borderWidth = 0.0
         
         tapToChangeLbl.layer.opacity = 0.25
+        
+        addBtn.isUserInteractionEnabled = false
+        subtractBtn.isUserInteractionEnabled = false
+        multiplyBtn.isUserInteractionEnabled = false
+        divideBtn.isUserInteractionEnabled = false
+        
+        addBtn.backgroundColor = UIColor.lightGray
+        subtractBtn.backgroundColor = UIColor.lightGray
+        multiplyBtn.backgroundColor = UIColor.lightGray
+        divideBtn.backgroundColor = UIColor.lightGray
         
         print("Tap")
     }
@@ -453,6 +546,7 @@ class BaseVC: UIViewController, UITextFieldDelegate {
                 priceExcludingTaxLbl.text = rawPrice.round(to: 2).formattedWithSeparator
             }
         }
+        priceExcludingTaxLbl.isUserInteractionEnabled = true
     }
     
     func taxAmountLblEdited() {
@@ -477,6 +571,7 @@ class BaseVC: UIViewController, UITextFieldDelegate {
                 priceExcludingTaxLbl.text = rawPrice.round(to: 2).formattedWithSeparator
             }
         }
+        taxAmountLbl.isUserInteractionEnabled = true
     }
     
     func taxPercentageLblEdited() {
@@ -508,6 +603,16 @@ class BaseVC: UIViewController, UITextFieldDelegate {
         }
         
         tapToChangeLbl.layer.opacity = 1.0
+        addBtn.isUserInteractionEnabled = true
+        subtractBtn.isUserInteractionEnabled = true
+        multiplyBtn.isUserInteractionEnabled = true
+        divideBtn.isUserInteractionEnabled = true
+        taxPercentageLbl.isUserInteractionEnabled = true
+        
+        addBtn.backgroundColor = UIColor(red: 99/255, green: 92/255, blue: 103/255, alpha: 1.0)
+        subtractBtn.backgroundColor = UIColor.white
+        multiplyBtn.backgroundColor = UIColor.white
+        divideBtn.backgroundColor = UIColor.white
     }
     
     func totalLblEdited() {
@@ -532,6 +637,7 @@ class BaseVC: UIViewController, UITextFieldDelegate {
                 priceExcludingTaxLbl.text = rawPrice.round(to: 2).formattedWithSeparator
             }
         }
+        totalLbl.isUserInteractionEnabled = true
     }
     
     
@@ -681,16 +787,70 @@ class BaseVC: UIViewController, UITextFieldDelegate {
         if runningNumber != "" {
             
             runningNumber = String(runningNumber.characters.dropLast())
-            output.text = runningNumber
+            
+            if !taxPercentageIsEditing {
+                output.text = runningNumber
+            }
+            
+            if priceExculudingTaxIsEditing {
+                priceExcludingTaxLbl.text = runningNumber
+                
+            } else if taxAmountIsEditing {
+                taxAmountLbl.text = runningNumber
+                
+            } else if totalIsEditing {
+                totalLbl.text = runningNumber
+                
+            } else if taxPercentageIsEditing {
+                taxPercentageLbl.text = runningNumber
+                
+            }
             
             if runningNumber == "" {
                 runningNumber = "0"
-                output.text = "0"
+//                output.text = "0"
+                
+                if !taxPercentageIsEditing {
+                    output.text = runningNumber
+                }
+                
+                if priceExculudingTaxIsEditing {
+                    priceExcludingTaxLbl.text = runningNumber
+                    
+                } else if taxAmountIsEditing {
+                    taxAmountLbl.text = runningNumber
+                    
+                } else if totalIsEditing {
+                    totalLbl.text = runningNumber
+                    
+                } else if taxPercentageIsEditing {
+                    taxPercentageLbl.text = runningNumber
+                    
+                }
+                
             }
             
         } else {
             runningNumber = "0"
-            output.text = ""
+//            output.text = ""
+            
+            if !taxPercentageIsEditing {
+                output.text = ""
+            }
+            
+            if priceExculudingTaxIsEditing {
+                priceExcludingTaxLbl.text = ""
+                
+            } else if taxAmountIsEditing {
+                taxAmountLbl.text = ""
+                
+            } else if totalIsEditing {
+                totalLbl.text = ""
+                
+            } else if taxPercentageIsEditing {
+                taxPercentageLbl.text = ""
+                
+            }
         }
         leftOperand.text = leftValStr
     }
@@ -740,12 +900,18 @@ class BaseVC: UIViewController, UITextFieldDelegate {
                 leftValStr = result
                 output.text = rightValStr
                 
-                if priceExculudingTaxIsEditing {
+                if !priceExculudingTaxIsEditing && !taxAmountIsEditing && !totalIsEditing && !taxPercentageIsEditing {
                     priceExcludingTaxLbl.text = result
+                    priceExcludingTaxLblEdited()
+                } else if priceExculudingTaxIsEditing {
+                    priceExcludingTaxLbl.text = result
+                    priceExcludingTaxLblEdited()
                 } else if taxAmountIsEditing {
                     taxAmountLbl.text = result
+                    taxAmountLblEdited()
                 } else if totalIsEditing {
                     totalLbl.text = result
+                    totalLblEdited()
                 }
                 
             }

@@ -99,6 +99,11 @@
                                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="22"/>
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <outletCollection property="gestureRecognizers" destination="oNI-yC-TGa" appends="YES" id="QaL-rz-KYI"/>
                                                 </connections>
@@ -514,15 +519,19 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addBtn" destination="vdQ-Kj-73N" id="EIG-iY-0N5"/>
                         <outlet property="clearButton" destination="xBj-C0-cMC" id="9ys-Iy-Eb7"/>
                         <outlet property="delButton" destination="7vq-Fd-Xm5" id="rSg-Sa-tg7"/>
+                        <outlet property="divideBtn" destination="gCt-v5-7RE" id="cZm-70-ohe"/>
                         <outlet property="dotButton" destination="PyB-Q6-Cba" id="2UM-ah-vzY"/>
                         <outlet property="keyboard" destination="MOE-re-ff4" id="KMz-EI-lMo"/>
                         <outlet property="leftOperand" destination="XTd-Wz-HXb" id="mNk-5Z-LE4"/>
+                        <outlet property="multiplyBtn" destination="66P-U9-MO5" id="3Yg-wM-Qia"/>
                         <outlet property="operatorLbl" destination="9Sx-qn-HZf" id="Q3z-oR-Mv7"/>
                         <outlet property="output" destination="9OQ-6a-onI" id="hd7-es-Ume"/>
                         <outlet property="priceExcludingTaxLbl" destination="FM6-eD-3i2" id="snL-01-E7D"/>
                         <outlet property="stackView" destination="XRB-Mf-pMK" id="ajo-13-Nj5"/>
+                        <outlet property="subtractBtn" destination="8O1-Dv-4uj" id="szr-6i-sw7"/>
                         <outlet property="tapToChangeLbl" destination="nsq-FG-Lgr" id="56J-O9-YmJ"/>
                         <outlet property="taxAmountLbl" destination="t9x-48-TVh" id="iv9-VY-Mx6"/>
                         <outlet property="taxPercentageLbl" destination="EcK-Z9-hL0" id="eGn-SL-R4j"/>
