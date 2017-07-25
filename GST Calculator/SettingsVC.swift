@@ -12,6 +12,7 @@ import StoreKit
 class SettingsVC: UIViewController, SKProductsRequestDelegate, SKPaymentTransactionObserver {
     
     @IBOutlet weak var payButton: CustomButton!
+    var startAppBanner: STABannerView?
     
     let AD_FREE_ID = "com.spacehash.GSTCalculator.ad"
     var products = [SKProduct]()
@@ -22,6 +23,12 @@ class SettingsVC: UIViewController, SKProductsRequestDelegate, SKPaymentTransact
         super.viewDidLoad()
         
         print("Purchased:", adFreePurchaseMade)
+        
+        if adFreePurchaseMade {
+            // Close Ad
+        } else {
+            showBannerAd()
+        }
         
         changeButton()
         requestProducts()
@@ -152,6 +159,13 @@ class SettingsVC: UIViewController, SKProductsRequestDelegate, SKPaymentTransact
             payButton.layer.backgroundColor = UIColor(red: 99/255, green: 92/255, blue: 103/255, alpha: 1.0).cgColor
         } else {
             //Show Ad
+        }
+    }
+    
+    func showBannerAd() {
+        if startAppBanner == nil {
+            startAppBanner = STABannerView(size: STA_AutoAdSize, origin: CGPoint(x: 0, y: 250), with: self.view, withDelegate: nil)
+            self.view.insertSubview(startAppBanner!, belowSubview: payButton)
         }
     }
 }

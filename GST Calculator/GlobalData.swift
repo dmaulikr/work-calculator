@@ -15,3 +15,5 @@ var rawPrice = 0.0
 var totalPrice = 0.0
 var taxPercent = 1.0
 var taxableAmount = 0.0
+
+var basePrice = 0.0

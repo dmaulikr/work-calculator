@@ -325,8 +325,8 @@ class BaseVC: UIViewController, UITextFieldDelegate {
     
     func showBannerAd() {
         if startAppBanner == nil {
-            startAppBanner = STABannerView(size: STA_AutoAdSize, origin: CGPoint(x: 0, y: 315), with: self.view, withDelegate: nil)
-            self.view.insertSubview(startAppBanner!, belowSubview: stackView)
+            startAppBanner = STABannerView(size: STA_AutoAdSize, origin: CGPoint(x: 0, y: 280), with: self.view, withDelegate: nil)
+            self.view.insertSubview(startAppBanner!, belowSubview: keyboard)
         }
     }
     

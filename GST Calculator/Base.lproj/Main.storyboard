@@ -641,45 +641,60 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="Q6A-xG-v6R">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="58"/>
                                         <subviews>
-                                            <button opaque="NO" clipsSubviews="YES" tag="28" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l7T-P3-iG2" customClass="PercentageButton" customModule="GST_Calculator" customModuleProvider="target">
+                                            <button opaque="NO" clipsSubviews="YES" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l7T-P3-iG2" customClass="PercentageButton" customModule="GST_Calculator" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="63" height="58"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="19"/>
                                                 <state key="normal" title="+28%">
                                                     <color key="titleColor" red="0.13725490200000001" green="0.13725490200000001" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="percentagePressed:" destination="Y7h-rW-Wjc" eventType="touchUpInside" id="hTT-fU-LPw"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" clipsSubviews="YES" tag="18" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KXR-mc-XC9" customClass="PercentageButton" customModule="GST_Calculator" customModuleProvider="target">
+                                            <button opaque="NO" clipsSubviews="YES" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KXR-mc-XC9" customClass="PercentageButton" customModule="GST_Calculator" customModuleProvider="target">
                                                 <rect key="frame" x="64" y="0.0" width="63.5" height="58"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="19"/>
                                                 <state key="normal" title="+18%">
                                                     <color key="titleColor" red="0.13725490200000001" green="0.13725490200000001" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="percentagePressed:" destination="Y7h-rW-Wjc" eventType="touchUpInside" id="het-dZ-vfU"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" clipsSubviews="YES" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C8I-0Y-lGi" customClass="PercentageButton" customModule="GST_Calculator" customModuleProvider="target">
+                                            <button opaque="NO" clipsSubviews="YES" tag="14" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C8I-0Y-lGi" customClass="PercentageButton" customModule="GST_Calculator" customModuleProvider="target">
                                                 <rect key="frame" x="128.5" y="0.0" width="63" height="58"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="19"/>
                                                 <state key="normal" title="+12%">
                                                     <color key="titleColor" red="0.13725490200000001" green="0.13725490200000001" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="percentagePressed:" destination="Y7h-rW-Wjc" eventType="touchUpInside" id="Aw0-La-9ka"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" clipsSubviews="YES" tag="50" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LFa-JK-7id" customClass="PercentageButton" customModule="GST_Calculator" customModuleProvider="target">
+                                            <button opaque="NO" clipsSubviews="YES" tag="15" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LFa-JK-7id" customClass="PercentageButton" customModule="GST_Calculator" customModuleProvider="target">
                                                 <rect key="frame" x="192.5" y="0.0" width="63.5" height="58"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="19"/>
                                                 <state key="normal" title="+5%">
                                                     <color key="titleColor" red="0.13725490200000001" green="0.13725490200000001" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="percentagePressed:" destination="Y7h-rW-Wjc" eventType="touchUpInside" id="oTk-Ua-PvU"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" clipsSubviews="YES" tag="30" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d8p-ES-fTM" customClass="PercentageButton" customModule="GST_Calculator" customModuleProvider="target">
+                                            <button opaque="NO" clipsSubviews="YES" tag="16" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d8p-ES-fTM" customClass="PercentageButton" customModule="GST_Calculator" customModuleProvider="target">
                                                 <rect key="frame" x="257" y="0.0" width="63" height="58"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="19"/>
                                                 <state key="normal" title="+3%">
                                                     <color key="titleColor" red="0.13725490200000001" green="0.13725490200000001" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="percentagePressed:" destination="Y7h-rW-Wjc" eventType="touchUpInside" id="5Xa-Le-t8I"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -689,45 +704,60 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="pXW-Re-chX">
                                         <rect key="frame" x="0.0" y="59" width="320" height="58"/>
                                         <subviews>
-                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BRJ-eO-vh6" customClass="PercentageButton" customModule="GST_Calculator" customModuleProvider="target">
+                                            <button opaque="NO" clipsSubviews="YES" tag="17" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BRJ-eO-vh6" customClass="PercentageButton" customModule="GST_Calculator" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="63" height="58"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="19"/>
                                                 <state key="normal" title="-28%">
                                                     <color key="titleColor" red="0.13725490200000001" green="0.13725490200000001" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="percentagePressed:" destination="Y7h-rW-Wjc" eventType="touchUpInside" id="7GI-7U-hF0"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SLw-BI-MG0" customClass="PercentageButton" customModule="GST_Calculator" customModuleProvider="target">
+                                            <button opaque="NO" clipsSubviews="YES" tag="18" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SLw-BI-MG0" customClass="PercentageButton" customModule="GST_Calculator" customModuleProvider="target">
                                                 <rect key="frame" x="64" y="0.0" width="63.5" height="58"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="19"/>
                                                 <state key="normal" title="-18%">
                                                     <color key="titleColor" red="0.13725490200000001" green="0.13725490200000001" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="percentagePressed:" destination="Y7h-rW-Wjc" eventType="touchUpInside" id="eUq-iV-7Je"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wfc-3X-ysI" customClass="PercentageButton" customModule="GST_Calculator" customModuleProvider="target">
+                                            <button opaque="NO" clipsSubviews="YES" tag="19" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wfc-3X-ysI" customClass="PercentageButton" customModule="GST_Calculator" customModuleProvider="target">
                                                 <rect key="frame" x="128.5" y="0.0" width="63" height="58"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="19"/>
                                                 <state key="normal" title="-12%">
                                                     <color key="titleColor" red="0.13725490200000001" green="0.13725490200000001" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="percentagePressed:" destination="Y7h-rW-Wjc" eventType="touchUpInside" id="djN-Y4-l5O"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D3s-LT-W5f" customClass="PercentageButton" customModule="GST_Calculator" customModuleProvider="target">
+                                            <button opaque="NO" clipsSubviews="YES" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D3s-LT-W5f" customClass="PercentageButton" customModule="GST_Calculator" customModuleProvider="target">
                                                 <rect key="frame" x="192.5" y="0.0" width="63.5" height="58"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="19"/>
                                                 <state key="normal" title="-5%">
                                                     <color key="titleColor" red="0.13725490200000001" green="0.13725490200000001" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="percentagePressed:" destination="Y7h-rW-Wjc" eventType="touchUpInside" id="Qaz-9M-XPY"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t2v-Uv-fd6" customClass="PercentageButton" customModule="GST_Calculator" customModuleProvider="target">
+                                            <button opaque="NO" clipsSubviews="YES" tag="21" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t2v-Uv-fd6" customClass="PercentageButton" customModule="GST_Calculator" customModuleProvider="target">
                                                 <rect key="frame" x="257" y="0.0" width="63" height="58"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="19"/>
                                                 <state key="normal" title="-3%">
                                                     <color key="titleColor" red="0.13725490200000001" green="0.13725490200000001" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="percentagePressed:" destination="Y7h-rW-Wjc" eventType="touchUpInside" id="B8J-kb-fYB"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -979,14 +1009,14 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W8d-23-Ae2" customClass="CustomLabel" customModule="GST_Calculator" customModuleProvider="target">
-                                <rect key="frame" x="16" y="78" width="288" height="70"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="W8d-23-Ae2" customClass="CustomLabel" customModule="GST_Calculator" customModuleProvider="target">
+                                <rect key="frame" x="8" y="78" width="304" height="70"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="j3U-cd-lwY"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="24"/>
+                                <color key="textColor" white="0.25" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
@@ -1006,10 +1036,10 @@
                             <constraint firstItem="W8d-23-Ae2" firstAttribute="top" secondItem="oS6-Xf-CYu" secondAttribute="bottom" constant="8" id="0zG-IA-Kkn"/>
                             <constraint firstItem="7I1-7x-yIx" firstAttribute="leading" secondItem="o0n-Au-Ouv" secondAttribute="leading" id="B1D-qy-Ted"/>
                             <constraint firstAttribute="trailing" secondItem="7I1-7x-yIx" secondAttribute="trailing" id="FKH-ZT-Ci4"/>
-                            <constraint firstItem="W8d-23-Ae2" firstAttribute="trailing" secondItem="o0n-Au-Ouv" secondAttribute="trailingMargin" id="KPy-iX-e3V"/>
+                            <constraint firstAttribute="trailing" secondItem="W8d-23-Ae2" secondAttribute="trailing" constant="8" id="HEd-1p-WaM"/>
                             <constraint firstAttribute="bottom" secondItem="7I1-7x-yIx" secondAttribute="bottom" id="Skh-n8-NHM"/>
-                            <constraint firstItem="W8d-23-Ae2" firstAttribute="leading" secondItem="o0n-Au-Ouv" secondAttribute="leadingMargin" id="fCk-qi-2rt"/>
                             <constraint firstItem="oS6-Xf-CYu" firstAttribute="leading" secondItem="o0n-Au-Ouv" secondAttribute="leading" id="qXE-bp-yIa"/>
+                            <constraint firstItem="W8d-23-Ae2" firstAttribute="leading" secondItem="o0n-Au-Ouv" secondAttribute="leading" constant="8" id="qpe-Ez-obe"/>
                             <constraint firstAttribute="trailing" secondItem="oS6-Xf-CYu" secondAttribute="trailing" id="wQs-ka-VRg"/>
                             <constraint firstItem="oS6-Xf-CYu" firstAttribute="top" secondItem="o0n-Au-Ouv" secondAttribute="top" id="xD0-v3-UvP"/>
                         </constraints>
