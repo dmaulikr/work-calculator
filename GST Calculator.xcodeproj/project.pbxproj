@@ -10,6 +10,8 @@
 		5AD89058B635F7E4F138F6FF /* Pods_GST_Calculator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E17E6D7DC521E0E4A1944E80 /* Pods_GST_Calculator.framework */; };
 		679FDA690AE9084554073434 /* Pods_GST_CalculatorUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5048661E1122FD92B1D7328A /* Pods_GST_CalculatorUITests.framework */; };
 		900CFB121F1AB126000449D7 /* GlobalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900CFB111F1AB126000449D7 /* GlobalData.swift */; };
+		9015B1D91F27229B009E0C21 /* SecondScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9015B1D81F27229B009E0C21 /* SecondScreenVC.swift */; };
+		9015B1DB1F275133009E0C21 /* PercentageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9015B1DA1F275133009E0C21 /* PercentageButton.swift */; };
 		9027A0A11F1F916400E78B7E /* StartApp.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9027A09F1F1F916400E78B7E /* StartApp.bundle */; };
 		9027A0A21F1F916400E78B7E /* StartApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9027A0A01F1F916400E78B7E /* StartApp.framework */; };
 		9027A0A41F1F933A00E78B7E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9027A0A31F1F933A00E78B7E /* AVFoundation.framework */; };
@@ -84,6 +86,8 @@
 		55FEA9208BBE6DAD3EC35F48 /* Pods-GST CalculatorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GST CalculatorTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GST CalculatorTests/Pods-GST CalculatorTests.debug.xcconfig"; sourceTree = "<group>"; };
 		69BE782044105614F6D8445E /* Pods-GST CalculatorUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GST CalculatorUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GST CalculatorUITests/Pods-GST CalculatorUITests.release.xcconfig"; sourceTree = "<group>"; };
 		900CFB111F1AB126000449D7 /* GlobalData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalData.swift; sourceTree = "<group>"; };
+		9015B1D81F27229B009E0C21 /* SecondScreenVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondScreenVC.swift; sourceTree = "<group>"; };
+		9015B1DA1F275133009E0C21 /* PercentageButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PercentageButton.swift; sourceTree = "<group>"; };
 		9027A09F1F1F916400E78B7E /* StartApp.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = StartApp.bundle; sourceTree = "<group>"; };
 		9027A0A01F1F916400E78B7E /* StartApp.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = StartApp.framework; sourceTree = "<group>"; };
 		9027A0A31F1F933A00E78B7E /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -261,6 +265,7 @@
 			children = (
 				906FFF2A1F120F190035EF3C /* BaseVC.swift */,
 				906CFBDB1F154BDE00C971B2 /* SettingsVC.swift */,
+				9015B1D81F27229B009E0C21 /* SecondScreenVC.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -287,6 +292,7 @@
 				90CC671D1F20B0BC00C14681 /* RoundedLabel.swift */,
 				906CFBD71F14F46F00C971B2 /* CustomView.swift */,
 				90CC671F1F20C6FB00C14681 /* PercentageLbl.swift */,
+				9015B1DA1F275133009E0C21 /* PercentageButton.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -650,6 +656,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				906FFF2B1F120F190035EF3C /* BaseVC.swift in Sources */,
+				9015B1D91F27229B009E0C21 /* SecondScreenVC.swift in Sources */,
 				906CFBD61F14F25700C971B2 /* CustomLabel.swift in Sources */,
 				906FFF291F120F190035EF3C /* AppDelegate.swift in Sources */,
 				906FFF601F1219D50035EF3C /* CustomButton.swift in Sources */,
@@ -659,6 +666,7 @@
 				900CFB121F1AB126000449D7 /* GlobalData.swift in Sources */,
 				906FFF621F1219D50035EF3C /* CustomTextField.swift in Sources */,
 				906FFF661F12261E0035EF3C /* ThousandSeparator.swift in Sources */,
+				9015B1DB1F275133009E0C21 /* PercentageButton.swift in Sources */,
 				90CC67201F20C6FB00C14681 /* PercentageLbl.swift in Sources */,
 				906CFBD81F14F46F00C971B2 /* CustomView.swift in Sources */,
 				90C041151F137FC200CA9DA0 /* CalcService.swift in Sources */,
