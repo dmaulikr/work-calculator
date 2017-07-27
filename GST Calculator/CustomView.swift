@@ -17,6 +17,18 @@ class CustomView: UIView {
         }
     }
     
+    @IBInspectable var borderWidth: CGFloat = 0 {
+        didSet {
+            setupView()
+        }
+    }
+    
+    @IBInspectable var borderColor: UIColor? {
+        didSet {
+            setupView()
+        }
+    }
+    
     override func prepareForInterfaceBuilder() {
         super.prepareForInterfaceBuilder()
         
@@ -25,6 +37,8 @@ class CustomView: UIView {
     
     func setupView() {
         self.layer.cornerRadius = cornerRadius
+        self.layer.borderWidth = borderWidth
+        self.layer.borderColor = borderColor?.cgColor
     }
     
 }

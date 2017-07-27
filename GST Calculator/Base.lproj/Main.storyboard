@@ -1009,43 +1009,88 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="W8d-23-Ae2" customClass="CustomLabel" customModule="GST_Calculator" customModuleProvider="target">
-                                <rect key="frame" x="8" y="78" width="304" height="70"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sLz-4h-3B1" customClass="CustomView" customModule="GST_Calculator" customModuleProvider="target">
+                                <rect key="frame" x="3" y="73" width="314" height="80"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="aAA-Rg-1Dj">
+                                        <rect key="frame" x="8" y="0.0" width="298" height="80"/>
+                                        <subviews>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="W8d-23-Ae2">
+                                                <rect key="frame" x="0.0" y="0.0" width="298" height="30.5"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="24"/>
+                                                <color key="textColor" white="0.25" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oc2-nt-5TX">
+                                                <rect key="frame" x="0.0" y="30.5" width="298" height="19"/>
+                                                <subviews>
+                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="%" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="a4K-K6-CuW">
+                                                        <rect key="frame" x="0.0" y="0.0" width="178" height="19"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="15"/>
+                                                        <color key="textColor" white="0.25" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="klu-3v-xGm">
+                                                        <rect key="frame" x="178" y="0.0" width="120" height="19"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="120" id="kjE-RZ-ofM"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="15"/>
+                                                        <color key="textColor" white="0.25" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="JKi-ZD-6Eg">
+                                                <rect key="frame" x="0.0" y="49.5" width="298" height="30.5"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="24"/>
+                                                <color key="textColor" white="0.25" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="j3U-cd-lwY"/>
+                                    <constraint firstAttribute="bottom" secondItem="aAA-Rg-1Dj" secondAttribute="bottom" id="Jtk-Fj-cMM"/>
+                                    <constraint firstAttribute="trailing" secondItem="aAA-Rg-1Dj" secondAttribute="trailing" constant="8" id="SzU-d2-ifC"/>
+                                    <constraint firstItem="aAA-Rg-1Dj" firstAttribute="top" secondItem="sLz-4h-3B1" secondAttribute="top" id="YxM-It-pua"/>
+                                    <constraint firstItem="aAA-Rg-1Dj" firstAttribute="leading" secondItem="sLz-4h-3B1" secondAttribute="leading" constant="8" id="bRn-Tx-ywN"/>
+                                    <constraint firstAttribute="height" constant="80" id="n88-Eu-1CD"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="24"/>
-                                <color key="textColor" white="0.25" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
                                 <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                         <color key="value" red="0.98039215690000003" green="0.59607843140000005" blue="0.043137254899999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                         <real key="value" value="2"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
-                            </label>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="W8d-23-Ae2" firstAttribute="top" secondItem="oS6-Xf-CYu" secondAttribute="bottom" constant="8" id="0zG-IA-Kkn"/>
                             <constraint firstItem="7I1-7x-yIx" firstAttribute="leading" secondItem="o0n-Au-Ouv" secondAttribute="leading" id="B1D-qy-Ted"/>
                             <constraint firstAttribute="trailing" secondItem="7I1-7x-yIx" secondAttribute="trailing" id="FKH-ZT-Ci4"/>
-                            <constraint firstAttribute="trailing" secondItem="W8d-23-Ae2" secondAttribute="trailing" constant="8" id="HEd-1p-WaM"/>
                             <constraint firstAttribute="bottom" secondItem="7I1-7x-yIx" secondAttribute="bottom" id="Skh-n8-NHM"/>
+                            <constraint firstAttribute="trailing" secondItem="sLz-4h-3B1" secondAttribute="trailing" constant="3" id="gNy-UP-sk2"/>
+                            <constraint firstItem="sLz-4h-3B1" firstAttribute="leading" secondItem="o0n-Au-Ouv" secondAttribute="leading" constant="3" id="h3u-kW-HG1"/>
                             <constraint firstItem="oS6-Xf-CYu" firstAttribute="leading" secondItem="o0n-Au-Ouv" secondAttribute="leading" id="qXE-bp-yIa"/>
-                            <constraint firstItem="W8d-23-Ae2" firstAttribute="leading" secondItem="o0n-Au-Ouv" secondAttribute="leading" constant="8" id="qpe-Ez-obe"/>
+                            <constraint firstItem="sLz-4h-3B1" firstAttribute="top" secondItem="oS6-Xf-CYu" secondAttribute="bottom" constant="3" id="vr8-EP-jX1"/>
                             <constraint firstAttribute="trailing" secondItem="oS6-Xf-CYu" secondAttribute="trailing" id="wQs-ka-VRg"/>
                             <constraint firstItem="oS6-Xf-CYu" firstAttribute="top" secondItem="o0n-Au-Ouv" secondAttribute="top" id="xD0-v3-UvP"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="addBtn" destination="iPp-gU-XlO" id="q4c-7g-gxi"/>
+                        <outlet property="bgView" destination="sLz-4h-3B1" id="KoU-kD-suy"/>
                         <outlet property="clearButton" destination="XXB-HQ-Jf2" id="fSb-fG-zex"/>
                         <outlet property="delButton" destination="Bn5-ve-aWu" id="tHt-B9-sbI"/>
                         <outlet property="divideBtn" destination="sG0-jY-jRj" id="aRX-Vq-Vzb"/>
@@ -1053,7 +1098,10 @@
                         <outlet property="keyboard" destination="7I1-7x-yIx" id="uWx-PB-UJ4"/>
                         <outlet property="multiplyBtn" destination="bop-hq-yhj" id="hbq-mp-W3r"/>
                         <outlet property="outputLabel" destination="W8d-23-Ae2" id="poJ-o9-w4Y"/>
+                        <outlet property="percentageLbl" destination="a4K-K6-CuW" id="LBz-zj-GDW"/>
                         <outlet property="subtractBtn" destination="88s-us-PqH" id="1a0-sE-ffn"/>
+                        <outlet property="taxAmountLbl" destination="klu-3v-xGm" id="zmh-1o-qdM"/>
+                        <outlet property="totalCalculatedLbl" destination="JKi-ZD-6Eg" id="Nwj-nv-74l"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4g1-ub-lIx" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1082,7 +1130,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ol0-5Y-hBy">
-                                        <rect key="frame" x="0.0" y="24" width="50" height="50"/>
+                                        <rect key="frame" x="0.0" y="24.5" width="50" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="50" id="WWP-nX-hwP"/>
                                             <constraint firstAttribute="height" constant="50" id="s1X-Xh-vcB"/>
@@ -1193,7 +1241,7 @@
         <image name="menuW" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="9Or-b4-uMh"/>
         <segue reference="R26-eX-QXR"/>
+        <segue reference="9Or-b4-uMh"/>
     </inferredMetricsTieBreakers>
 </document>

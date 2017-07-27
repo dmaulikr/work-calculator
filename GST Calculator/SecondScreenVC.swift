@@ -19,6 +19,10 @@ class SecondScreenVC: UIViewController {
     @IBOutlet weak var multiplyBtn: UIButton!
     @IBOutlet weak var divideBtn: UIButton!
     @IBOutlet weak var outputLabel: UILabel!
+    @IBOutlet weak var bgView: CustomView!
+    @IBOutlet weak var percentageLbl: UILabel!
+    @IBOutlet weak var taxAmountLbl: UILabel!
+    @IBOutlet weak var totalCalculatedLbl: UILabel!
     
     var startAppBanner: STABannerView?
     
@@ -33,6 +37,9 @@ class SecondScreenVC: UIViewController {
         super.viewDidLoad()
         
         outputLabel.text = basePrice.round(to: 2).formattedWithSeparator
+        percentageLbl.text = percentOnLbl
+        taxAmountLbl.text = taxableAmount2.round(to: 2).formattedWithSeparator
+        totalCalculatedLbl.text = totalPrice2.round(to: 2).formattedWithSeparator
         
         print("Purchased:", adFreePurchaseMade)
         
@@ -62,63 +69,74 @@ class SecondScreenVC: UIViewController {
             if basePrice != 0.0 {
                 
                 if btn.tag == 12 {
-                    basePrice += (basePrice * 0.28)
+                    percentageLbl.text = "+28%"
+                    percentOnLbl = "+28%"
+                    taxPercent2 = 0.28
+                    updateLables()
                 } else if btn.tag == 13 {
-                    basePrice += (basePrice * 0.18)
+                    percentageLbl.text = "+18%"
+                    percentOnLbl = "+18%"
+                    taxPercent2 = 0.18
+                    updateLables()
                 } else if btn.tag == 14 {
-                    basePrice += (basePrice * 0.12)
+                    percentageLbl.text = "+12%"
+                    percentOnLbl = "+12%"
+                    taxPercent2 = 0.12
+                    updateLables()
                 } else if btn.tag == 15 {
-                    basePrice += (basePrice * 0.05)
+                    percentageLbl.text = "+5%"
+                    percentOnLbl = "+5%"
+                    taxPercent2 = 0.05
+                    updateLables()
                 } else if btn.tag == 16 {
-                    basePrice += (basePrice * 0.03)
+                    percentageLbl.text = "+3%"
+                    percentOnLbl = "+3%"
+                    taxPercent2 = 0.03
+                    updateLables()
                 } else if btn.tag == 17 {
-                    basePrice -= (basePrice * 0.28)
+                    percentageLbl.text = "-28%"
+                    percentOnLbl = "-28%"
+                    taxPercent2 = 0.28
+                    updateLablesMinus()
                 } else if btn.tag == 18 {
-                    basePrice -= (basePrice * 0.18)
+                    percentageLbl.text = "-18%"
+                    percentOnLbl = "-18%"
+                    taxPercent2 = 0.18
+                    updateLablesMinus()
                 } else if btn.tag == 19 {
-                    basePrice -= (basePrice * 0.12)
+                    percentageLbl.text = "-12%"
+                    percentOnLbl = "-12%"
+                    taxPercent2 = 0.12
+                    updateLablesMinus()
                 } else if btn.tag == 20 {
-                    basePrice -= (basePrice * 0.05)
+                    percentageLbl.text = "-5%"
+                    percentOnLbl = "-5%"
+                    taxPercent2 = 0.05
+                    updateLablesMinus()
                 } else if btn.tag == 21 {
-                    basePrice -= (basePrice * 0.03)
-                }
-                
-                leftValStr = String(basePrice.round(to: 2))
-                outputLabel.text = basePrice.round(to: 2).formattedWithSeparator
-            } else {
-                
-                if leftValStr != "" {
-                    basePrice = Double(leftValStr)!
-                
-                if btn.tag == 12 {
-                    basePrice += (basePrice * 0.28)
-                } else if btn.tag == 13 {
-                    basePrice += (basePrice * 0.18)
-                } else if btn.tag == 14 {
-                    basePrice += (basePrice * 0.12)
-                } else if btn.tag == 15 {
-                    basePrice += (basePrice * 0.05)
-                } else if btn.tag == 16 {
-                    basePrice += (basePrice * 0.03)
-                } else if btn.tag == 17 {
-                    basePrice -= (basePrice * 0.28)
-                } else if btn.tag == 18 {
-                    basePrice -= (basePrice * 0.18)
-                } else if btn.tag == 19 {
-                    basePrice -= (basePrice * 0.12)
-                } else if btn.tag == 20 {
-                    basePrice -= (basePrice * 0.05)
-                } else if btn.tag == 21 {
-                    basePrice -= (basePrice * 0.03)
-                }
-                
-                leftValStr = String(basePrice.round(to: 2))
-                outputLabel.text = basePrice.round(to: 2).formattedWithSeparator
+                    percentageLbl.text = "-3%"
+                    percentOnLbl = "-3%"
+                    taxPercent2 = 0.03
+                    updateLablesMinus()
                 }
             }
-            
         }
-        
+    }
+    
+    func updateLables() {
+        taxableAmount2 = basePrice * taxPercent2
+        totalPrice2 = basePrice + taxableAmount2
+        taxAmountLbl.text = taxableAmount2.round(to: 2).formattedWithSeparator
+        totalCalculatedLbl.text = totalPrice2.round(to: 2).formattedWithSeparator
+        outputLabel.text = basePrice.round(to: 2).formattedWithSeparator
+    }
+    
+    func updateLablesMinus() {
+        taxableAmount2 = basePrice * taxPercent2
+        totalPrice2 = basePrice - taxableAmount2
+        taxAmountLbl.text = taxableAmount2.round(to: 2).formattedWithSeparator
+        totalCalculatedLbl.text = totalPrice2.round(to: 2).formattedWithSeparator
+        outputLabel.text = basePrice.round(to: 2).formattedWithSeparator
     }
     
     //******************************
@@ -178,7 +196,13 @@ class SecondScreenVC: UIViewController {
         currentOperation = CalcService.Operation.empty
         
         outputLabel.text = "0"
+        percentageLbl.text = "%"
+        taxAmountLbl.text = "0"
+        totalCalculatedLbl.text = "0"
         basePrice = 0.0
+        taxPercent2 = 0.0
+        taxableAmount2 = 0.0
+        totalPrice2 = 0.0
     }
     
     @IBAction func delTapped(_ sender: AnyObject) {
