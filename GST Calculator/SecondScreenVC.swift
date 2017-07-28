@@ -153,8 +153,10 @@ class SecondScreenVC: UIViewController {
         }
         
         outputLabel.text = runningNumber
-        
-        basePrice = Double(runningNumber)!
+        if let num = Double(runningNumber) {
+            basePrice = num
+        }
+//        basePrice = Double(runningNumber)!
     }
     
     @IBAction func dotTapped(_ btn: UIButton!) {
@@ -162,7 +164,15 @@ class SecondScreenVC: UIViewController {
         runningNumber += "."
         outputLabel.text = runningNumber
         
-        basePrice = Double(runningNumber)!
+        if runningNumber == "." || runningNumber == "0" || runningNumber == "0." || runningNumber == "0.." || runningNumber == "0..." || runningNumber == "0...." || runningNumber == "0....." || runningNumber == "0......." || runningNumber == "0......." {
+            runningNumber = "0."
+            basePrice = 0.0
+        } else {
+            if let num = Double(runningNumber) {
+                basePrice = num
+            }
+//            basePrice = Double(runningNumber)!
+        }
     }
     
     @IBAction func onDividePressed(_ sender: AnyObject) {
@@ -211,19 +221,20 @@ class SecondScreenVC: UIViewController {
             
             runningNumber = String(runningNumber.characters.dropLast())
             outputLabel.text = runningNumber
-//            basePrice = Double(runningNumber)!
             
             if runningNumber == "" {
                 runningNumber = "0"
                 outputLabel.text = runningNumber
-//                basePrice = Double(runningNumber)!
             }
             
         } else {
             
             runningNumber = "0"
             outputLabel.text = ""
-//            basePrice = Double(runningNumber)!
+        }
+        
+        if runningNumber == "0" {
+            outputLabel.text = "0"
         }
     }
     

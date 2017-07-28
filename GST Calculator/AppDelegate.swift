@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import CoreData
 import SwiftlyRater
 
 @UIApplicationMain
@@ -21,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let sdk: STAStartAppSDK = STAStartAppSDK.sharedInstance()
         sdk.appID = "206188633"
         sdk.devID = "106960131"
+        sdk.disableReturnAd()
         
         SwiftlyRater.sharedInstance.appId = "1261294723"
         return true
