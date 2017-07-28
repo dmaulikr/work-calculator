@@ -53,7 +53,7 @@ class SecondScreenVC: UIViewController {
     
     func showBannerAd() {
         if startAppBanner == nil {
-            startAppBanner = STABannerView(size: STA_AutoAdSize, origin: CGPoint(x: 0, y: 160), with: self.view, withDelegate: nil)
+            startAppBanner = STABannerView(size: STA_AutoAdSize, origin: CGPoint(x: 0, y: 155), with: self.view, withDelegate: nil)
             self.view.insertSubview(startAppBanner!, belowSubview: keyboard)
         }
     }
@@ -207,6 +207,7 @@ class SecondScreenVC: UIViewController {
         percentageLbl.text = "%"
         taxAmountLbl.text = "0"
         totalCalculatedLbl.text = "0"
+        percentOnLbl = "%"
         basePrice = 0.0
         taxPercent2 = 0.0
         taxableAmount2 = 0.0
