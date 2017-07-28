@@ -156,7 +156,6 @@ class SecondScreenVC: UIViewController {
         if let num = Double(runningNumber) {
             basePrice = num
         }
-//        basePrice = Double(runningNumber)!
     }
     
     @IBAction func dotTapped(_ btn: UIButton!) {
@@ -171,7 +170,6 @@ class SecondScreenVC: UIViewController {
             if let num = Double(runningNumber) {
                 basePrice = num
             }
-//            basePrice = Double(runningNumber)!
         }
     }
     
