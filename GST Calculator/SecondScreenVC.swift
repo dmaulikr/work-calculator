@@ -26,6 +26,18 @@ class SecondScreenVC: UIViewController {
     
     var startAppBanner: STABannerView?
     
+    //ActivePercentage
+    var percent1 = false
+    var percent2 = false
+    var percent3 = false
+    var percent4 = false
+    var percent5 = false
+    var percent6 = false
+    var percent7 = false
+    var percent8 = false
+    var percent9 = false
+    var percent10 = false
+    
     // Variables for calculations
     var runningNumber = "0"
     var leftValStr = ""
@@ -73,54 +85,155 @@ class SecondScreenVC: UIViewController {
                     percentOnLbl = "+28%"
                     taxPercent2 = 0.28
                     updateLables()
+                    percent1 = true
+                    percent2 = false
+                    percent3 = false
+                    percent4 = false
+                    percent5 = false
+                    percent6 = false
+                    percent7 = false
+                    percent8 = false
+                    percent9 = false
+                    percent10 = false
                 } else if btn.tag == 13 {
                     percentageLbl.text = "+18%"
                     percentOnLbl = "+18%"
                     taxPercent2 = 0.18
                     updateLables()
+                    percent1 = false
+                    percent2 = true
+                    percent3 = false
+                    percent4 = false
+                    percent5 = false
+                    percent6 = false
+                    percent7 = false
+                    percent8 = false
+                    percent9 = false
+                    percent10 = false
                 } else if btn.tag == 14 {
                     percentageLbl.text = "+12%"
                     percentOnLbl = "+12%"
                     taxPercent2 = 0.12
                     updateLables()
+                    percent1 = false
+                    percent2 = false
+                    percent3 = true
+                    percent4 = false
+                    percent5 = false
+                    percent6 = false
+                    percent7 = false
+                    percent8 = false
+                    percent9 = false
+                    percent10 = false
                 } else if btn.tag == 15 {
                     percentageLbl.text = "+5%"
                     percentOnLbl = "+5%"
                     taxPercent2 = 0.05
                     updateLables()
+                    percent1 = false
+                    percent2 = false
+                    percent3 = false
+                    percent4 = true
+                    percent5 = false
+                    percent6 = false
+                    percent7 = false
+                    percent8 = false
+                    percent9 = false
+                    percent10 = false
                 } else if btn.tag == 16 {
                     percentageLbl.text = "+3%"
                     percentOnLbl = "+3%"
                     taxPercent2 = 0.03
                     updateLables()
+                    percent1 = false
+                    percent2 = false
+                    percent3 = false
+                    percent4 = false
+                    percent5 = true
+                    percent6 = false
+                    percent7 = false
+                    percent8 = false
+                    percent9 = false
+                    percent10 = false
                 } else if btn.tag == 17 {
                     percentageLbl.text = "-28%"
                     percentOnLbl = "-28%"
                     taxPercent2 = 0.28
                     updateLablesMinus()
+                    percent1 = false
+                    percent2 = false
+                    percent3 = false
+                    percent4 = false
+                    percent5 = false
+                    percent6 = true
+                    percent7 = false
+                    percent8 = false
+                    percent9 = false
+                    percent10 = false
                 } else if btn.tag == 18 {
                     percentageLbl.text = "-18%"
                     percentOnLbl = "-18%"
                     taxPercent2 = 0.18
                     updateLablesMinus()
+                    percent1 = false
+                    percent2 = false
+                    percent3 = false
+                    percent4 = false
+                    percent5 = false
+                    percent6 = false
+                    percent7 = true
+                    percent8 = false
+                    percent9 = false
+                    percent10 = false
                 } else if btn.tag == 19 {
                     percentageLbl.text = "-12%"
                     percentOnLbl = "-12%"
                     taxPercent2 = 0.12
                     updateLablesMinus()
+                    percent1 = false
+                    percent2 = false
+                    percent3 = false
+                    percent4 = false
+                    percent5 = false
+                    percent6 = false
+                    percent7 = false
+                    percent8 = true
+                    percent9 = false
+                    percent10 = false
                 } else if btn.tag == 20 {
                     percentageLbl.text = "-5%"
                     percentOnLbl = "-5%"
                     taxPercent2 = 0.05
                     updateLablesMinus()
+                    percent1 = false
+                    percent2 = false
+                    percent3 = false
+                    percent4 = false
+                    percent5 = false
+                    percent6 = false
+                    percent7 = false
+                    percent8 = false
+                    percent9 = true
+                    percent10 = false
                 } else if btn.tag == 21 {
                     percentageLbl.text = "-3%"
                     percentOnLbl = "-3%"
                     taxPercent2 = 0.03
                     updateLablesMinus()
+                    percent1 = false
+                    percent2 = false
+                    percent3 = false
+                    percent4 = false
+                    percent5 = false
+                    percent6 = false
+                    percent7 = false
+                    percent8 = false
+                    percent9 = false
+                    percent10 = true
                 }
             }
         }
+        print(percent1, percent2, percent3, percent4, percent5, percent6, percent7, percent8, percent9, percent10)
     }
     
     func updateLables() {
@@ -192,7 +305,15 @@ class SecondScreenVC: UIViewController {
     @IBAction func onEqualPressed(_ sender: AnyObject) {
         processOperation(currentOperation)
         
-        outputLabel.text = String(basePrice.round(to: 2).formattedWithSeparator)
+//        outputLabel.text = String(basePrice.round(to: 2).formattedWithSeparator)
+        
+        if percent1 || percent2 || percent3 || percent4 || percent5 {
+            updateLables()
+        } else if percent6 || percent7 || percent8 || percent9 || percent10 {
+            updateLablesMinus()
+        } else {
+            outputLabel.text = String(basePrice.round(to: 2).formattedWithSeparator)
+        }
     }
     
     @IBAction func onClearPressed(_ sender: AnyObject) {
@@ -212,6 +333,17 @@ class SecondScreenVC: UIViewController {
         taxPercent2 = 0.0
         taxableAmount2 = 0.0
         totalPrice2 = 0.0
+        
+        percent1 = false
+        percent2 = false
+        percent3 = false
+        percent4 = false
+        percent5 = false
+        percent6 = false
+        percent7 = false
+        percent8 = false
+        percent9 = false
+        percent10 = false
     }
     
     @IBAction func delTapped(_ sender: AnyObject) {
